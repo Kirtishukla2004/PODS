@@ -1,0 +1,8 @@
+
+azure-functions
+azure-storage-blob
+azure-servicebus
+msal
+requests
+reportlab
+pypdf

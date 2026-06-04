@@ -78,6 +78,7 @@ def EmailIngestion(myTimer: func.TimerRequest) -> None:
                         file_bytes, email_id, attachment_name, extension)
                     blob_names.append(blob_name)
                     logging.info(f"Uploaded {extension.upper()}: {blob_name}")
+                
                 else:
                     logging.info(
                         f"Skipping unsupported attachment: "

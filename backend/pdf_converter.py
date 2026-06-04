@@ -7,6 +7,9 @@ from reportlab.lib.pagesizes import A4
 from reportlab.lib.styles import getSampleStyleSheet
 from reportlab.lib.units import inch
 from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Image
+from reportlab.pdfbase import pdfmetrics
+from reportlab.pdfbase.ttfonts import TTFont
+import os
 
 
 SUPPORTED_IMAGE_TYPES = {
@@ -69,6 +72,58 @@ def convert_attachment_to_pdf(attachment):
 
 
 def convert_email_to_pdf(email):
+    # Register a Unicode font that supports Japanese
+    font_path = "C:/Windows/Fonts/msgothic.ttc"  # MS Gothic — available on Windows
+    pdfmetrics.registerFont(TTFont("MSGothic", font_path, subfontIndex=0))
+
+    buffer = io.BytesIO()
+    doc = SimpleDocTemplate(
+        buffer,
+        pagesize=A4,
+        rightMargin=inch,
+        leftMargin=inch,
+        topMargin=inch,
+        bottomMargin=inch,
+    )
+
+    styles = getSampleStyleSheet()
+    # Override all styles to use the Japanese font
+    for style in styles.byName.values():
+        style.fontName = "MSGothic"
+
+    content = []
+
+    subject = email.get("subject", "No Subject")
+    sender = email.get("sender", "Unknown")
+    received = email.get("received", "")
+    body = email.get("body", "")
+
+    if isinstance(body, dict):
+        body = body.get("content", "")
+    if isinstance(sender, dict):
+        sender = sender.get("emailAddress", {}).get("address", "Unknown")
+
+    content.append(Paragraph(f"Subject: {subject}", styles["Heading1"]))
+    content.append(Spacer(1, 0.2 * inch))
+    content.append(Paragraph(f"From: {sender}", styles["Normal"]))
+    content.append(Spacer(1, 0.1 * inch))
+    content.append(Paragraph(f"Received: {received}", styles["Normal"]))
+    content.append(Spacer(1, 0.3 * inch))
+    content.append(Paragraph("Email Body:", styles["Heading2"]))
+    content.append(Spacer(1, 0.2 * inch))
+
+    # Remove HTML tags only — no encoding stripping
+    clean_body = re.sub(r"<[^>]+>", "", body).strip()
+    if not clean_body:
+        clean_body = "(No body content)"
+
+    # Preserve line breaks
+    clean_body = clean_body.replace("\n", "<br/>")
+    content.append(Paragraph(clean_body, styles["Normal"]))
+
+    doc.build(content)
+    buffer.seek(0)
+    return buffer.getvalue()
     """Convert email metadata + body to a PDF (used if you ever re-enable body upload)."""
     buffer = io.BytesIO()
 
@@ -85,9 +140,9 @@ def convert_email_to_pdf(email):
     content = []
 
     subject = email.get("subject", "No Subject")
-    sender  = email.get("sender",  "Unknown")
+    sender = email.get("sender",  "Unknown")
     received = email.get("received", "")
-    body    = email.get("body", "")
+    body = email.get("body", "")
 
     if isinstance(body, dict):
         body = body.get("content", "")

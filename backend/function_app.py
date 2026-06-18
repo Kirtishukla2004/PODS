@@ -1,7 +1,4 @@
 import azure.functions as func
-import logging
-
-from pdf_converter import get_attachment_bytes
 from blob_uploader import upload_file
 from service_bus_sender import send_to_queue
 from email_tracker import is_processed, mark_processed
@@ -13,9 +10,8 @@ from pdf_converter import (
     get_attachment_bytes,
     convert_email_to_pdf
 )
+import logging
 app = func.FunctionApp()
-
-
 @app.timer_trigger(
     schedule="0 */5 * * * *",
     arg_name="myTimer",
@@ -23,10 +19,8 @@ app = func.FunctionApp()
 )
 def EmailIngestion(myTimer: func.TimerRequest) -> None:
     logging.info("Email ingestion function started")
-
     emails = fetch_emails()
     logging.info(f"Found {len(emails)} unread emails")
-
     for email_data in emails:
         email = get_email_details(email_data)
         email_id = email["id"]
@@ -37,7 +31,6 @@ def EmailIngestion(myTimer: func.TimerRequest) -> None:
             logging.info(f"Skipping already processed email: {subject}")
             continue
 
-        logging.info(f"Processing email: {subject}")
         blob_names = []
 
         try:
@@ -70,7 +63,6 @@ def EmailIngestion(myTimer: func.TimerRequest) -> None:
 
             for i, attachment in enumerate(attachments):
                 file_bytes, extension = get_attachment_bytes(attachment)
-
                 if file_bytes and extension:
                     attachment_name = attachment.get(
                         "filename", f"attachment_{i}")
@@ -78,7 +70,6 @@ def EmailIngestion(myTimer: func.TimerRequest) -> None:
                         file_bytes, email_id, attachment_name, extension)
                     blob_names.append(blob_name)
                     logging.info(f"Uploaded {extension.upper()}: {blob_name}")
-                
                 else:
                     logging.info(
                         f"Skipping unsupported attachment: "

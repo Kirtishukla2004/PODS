@@ -68,7 +68,7 @@ __pycache__/
 Thumbs.db
 
 
-gmail_credentials.json
-gmail_token.json
+config/credentials.json
+config/gmail_token.json
 host.json
 local.settings.json

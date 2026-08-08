@@ -1,4 +1,3 @@
-import os
 import base64
 import io
 import re
@@ -124,46 +123,5 @@ def convert_email_to_pdf(email):
     doc.build(content)
     buffer.seek(0)
     return buffer.getvalue()
-    """Convert email metadata + body to a PDF (used if you ever re-enable body upload)."""
-    buffer = io.BytesIO()
 
-    doc = SimpleDocTemplate(
-        buffer,
-        pagesize=A4,
-        rightMargin=inch,
-        leftMargin=inch,
-        topMargin=inch,
-        bottomMargin=inch,
-    )
 
-    styles = getSampleStyleSheet()
-    content = []
-
-    subject = email.get("subject", "No Subject")
-    sender = email.get("sender",  "Unknown")
-    received = email.get("received", "")
-    body = email.get("body", "")
-
-    if isinstance(body, dict):
-        body = body.get("content", "")
-    if isinstance(sender, dict):
-        sender = sender.get("emailAddress", {}).get("address", "Unknown")
-
-    content.append(Paragraph(f"Subject: {subject}", styles["Heading1"]))
-    content.append(Spacer(1, 0.2 * inch))
-    content.append(Paragraph(f"From: {sender}", styles["Normal"]))
-    content.append(Spacer(1, 0.1 * inch))
-    content.append(Paragraph(f"Received: {received}", styles["Normal"]))
-    content.append(Spacer(1, 0.3 * inch))
-    content.append(Paragraph("Email Body:", styles["Heading2"]))
-    content.append(Spacer(1, 0.2 * inch))
-
-    clean_body = re.sub(r"<[^>]+>", "", body)
-    clean_body = clean_body.encode("ascii", "ignore").decode("ascii").strip()
-    if not clean_body:
-        clean_body = "(No body content)"
-
-    content.append(Paragraph(clean_body, styles["Normal"]))
-    doc.build(content)
-    buffer.seek(0)
-    return buffer.getvalue()

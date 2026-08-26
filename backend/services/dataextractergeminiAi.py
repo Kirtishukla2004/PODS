@@ -3,8 +3,6 @@ from google import genai
 from google.genai import types
 
 client = genai.Client(api_key=os.environ["GEMINI_API_KEY"])
-
-
 def extract_document(file_bytes: bytes, blob_name: str):
     extension = blob_name.lower().split(".")[-1]
     mime_types = {

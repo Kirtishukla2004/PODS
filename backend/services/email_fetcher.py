@@ -1,34 +1,52 @@
 import os
 import base64
+import logging
 from google.oauth2.credentials import Credentials
-from google_auth_oauthlib.flow import InstalledAppFlow
 from google.auth.transport.requests import Request
+from google.auth.exceptions import RefreshError
 from googleapiclient.discovery import build
-
 
 SCOPES = ["https://www.googleapis.com/auth/gmail.modify"]
 
 
+class GmailAuthError(Exception):
+    """Raised when Gmail credentials are missing/invalid and need manual re-authorization."""
+    pass
+
+
 def get_gmail_service():
-    creds = None
-    token_file       = os.environ["GMAIL_TOKEN_FILE"]
-    credentials_file = os.environ["GMAIL_CREDENTIALS_FILE"]
+    token_file = os.environ["GMAIL_TOKEN_FILE"]
 
-    if os.path.exists(token_file):
-        creds = Credentials.from_authorized_user_file(token_file, SCOPES)
+    if not os.path.exists(token_file):
+        raise GmailAuthError(
+            f"No token file at {token_file}. Run the one-time local "
+            "auth script to generate it before deploying."
+        )
 
-    if not creds or not creds.valid:
-        if creds and creds.expired and creds.refresh_token:
+    creds = Credentials.from_authorized_user_file(token_file, SCOPES)
+
+    if creds.valid:
+        return build("gmail", "v1", credentials=creds)
+
+    if creds.expired and creds.refresh_token:
+        try:
             creds.refresh(Request())
             with open(token_file, "w") as f:
                 f.write(creds.to_json())
-        else:
-            flow = InstalledAppFlow.from_client_secrets_file(credentials_file, SCOPES)
-            creds = flow.run_local_server(port=0, access_type="offline", prompt="consent")
-            with open(token_file, "w") as f:
-                f.write(creds.to_json())
+            return build("gmail", "v1", credentials=creds)
+        except RefreshError as e:
+            # invalid_grant lands here — token is dead, not just expired.
+            # No interactive flow inside a timer trigger. Fail loudly
+            # and distinctly so it's easy to alert on.
+            logging.error(f"Gmail refresh token invalid, needs re-auth: {e}")
+            raise GmailAuthError(
+                "Gmail refresh token was revoked/expired (invalid_grant). "
+                "Re-run the local OAuth consent flow manually and redeploy "
+                "the token file."
+            ) from e
 
-    return build("gmail", "v1", credentials=creds)
+    raise GmailAuthError(
+        "Gmail credentials invalid and no refresh token present.")
 
 
 def fetch_emails():
@@ -54,18 +72,23 @@ def fetch_emails():
 def get_email_details(email_data):
     headers = email_data["payload"]["headers"]
 
-    subject  = next((h["value"] for h in headers if h["name"] == "Subject"), "No Subject")
-    sender   = next((h["value"] for h in headers if h["name"] == "From"),    "Unknown")
-    received = next((h["value"] for h in headers if h["name"] == "Date"),    "")
+    subject = next((h["value"]
+                   for h in headers if h["name"] == "Subject"), "No Subject")
+    sender = next((h["value"]
+                  for h in headers if h["name"] == "From"),    "Unknown")
+    received = next((h["value"]
+                    for h in headers if h["name"] == "Date"),    "")
 
     body = ""
     if "parts" in email_data["payload"]:
         for part in email_data["payload"]["parts"]:
             if part["mimeType"] == "text/plain" and "data" in part.get("body", {}):
-                body = base64.urlsafe_b64decode(part["body"]["data"]).decode("utf-8")
+                body = base64.urlsafe_b64decode(
+                    part["body"]["data"]).decode("utf-8")
                 break
     elif "data" in email_data["payload"].get("body", {}):
-        body = base64.urlsafe_b64decode(email_data["payload"]["body"]["data"]).decode("utf-8")
+        body = base64.urlsafe_b64decode(
+            email_data["payload"]["body"]["data"]).decode("utf-8")
 
     return {
         "id":             email_data["id"],
@@ -83,8 +106,8 @@ def get_email_details(email_data):
 def fetch_attachments(service, email_id, payload):
     attachments = []
     for part in payload.get("parts", []):
-        filename     = part.get("filename", "")
-        body         = part.get("body", {})
+        filename = part.get("filename", "")
+        body = part.get("body", {})
         attachment_id = body.get("attachmentId")
 
         if filename and attachment_id:
@@ -97,7 +120,8 @@ def fetch_attachments(service, email_id, payload):
             attachments.append({
                 "filename":     filename,
                 "contentType":  part["mimeType"],
-                "contentBytes": attachment["data"],   # URL-safe base64 from Gmail API
+                # URL-safe base64 from Gmail API
+                "contentBytes": attachment["data"],
             })
     return attachments
 

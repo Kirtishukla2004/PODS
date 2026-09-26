@@ -1,11 +1,12 @@
 from function_app import app
 import azure.functions as func
 import logging
-
+from functions import privacy_policy
 from services.blob_uploader import upload_file
 from services.service_bus_sender import send_to_queue
 from services.email_tracker import is_processed, mark_processed
 from services.email_fetcher import (
+    GmailAuthError,
     fetch_emails,
     fetch_attachments,
     mark_email_as_read,
@@ -25,13 +26,20 @@ from services.file_processor import (
 )
 def EmailIngestion(myTimer: func.TimerRequest) -> None:
     logging.info("Email ingestion function started")
-    emails = fetch_emails()
+
+    try:
+        emails = fetch_emails()
+    except GmailAuthError as e:
+        logging.error(f"Gmail auth needs manual intervention: {e}")
+        return  # or send an alert/notification here
+
     logging.info(f"Found {len(emails)} unread emails")
+
     for email_data in emails:
         email = get_email_details(email_data)
         email_id = email["id"]
         subject = email.get("subject", "No Subject")
-        sender = email.get("sender",  "")
+        sender = email.get("sender", "")
 
         if is_processed(email_id):
             logging.info(f"Skipping already processed email: {subject}")
@@ -57,7 +65,16 @@ def EmailIngestion(myTimer: func.TimerRequest) -> None:
                 logging.info(f"Processed body-only email: {subject}")
                 continue
 
-            service = get_gmail_service()
+            try:
+                service = get_gmail_service()
+            except GmailAuthError as e:
+                # Token died mid-run (or between the fetch_emails() call and
+                # here). Stop processing entirely rather than logging every
+                # remaining email as an individual failure.
+                logging.error(
+                    f"Gmail auth lost mid-run, aborting remaining emails: {e}")
+                break
+
             attachments = fetch_attachments(
                 service, email_id, email_data["payload"])
 

@@ -21,7 +21,7 @@ from services.file_processor import (
 
 
 @app.timer_trigger(
-    schedule="0 */5 * * * *",
+    schedule="0 0 * * * *",
     arg_name="myTimer",
     run_on_startup=False,
 )

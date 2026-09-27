@@ -1,12 +1,12 @@
 from function_app import app
 import azure.functions as func
 import logging
+from functions import homepage
 from functions import privacy_policy
 from functions import google_verification
 from services.blob_uploader import upload_file
 from services.service_bus_sender import send_to_queue
 from services.email_tracker import is_processed, mark_processed
-from functions import homepage
 from services.email_fetcher import (
     GmailAuthError,
     fetch_emails,

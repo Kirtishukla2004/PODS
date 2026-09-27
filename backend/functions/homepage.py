@@ -5,8 +5,12 @@ HOMEPAGE_HTML = """<!DOCTYPE html>
 <html>
 <head><title>PODS</title></head>
 <body>
-<h1>PODS</h1>
-<p>Internal document processing service.</p>
+<h1>PODS (Processing & Organization Document Service)</h1>
+<p>PODS is an internal tool used by PODS to automatically process,
+classify, and organize uploaded documents using Google Drive integration.
+It reads and organizes files a user has granted access to, and does not
+share data with third parties.</p>
+<p><a href="https://yourdomain.com/privacy">Privacy Policy</a></p>
 </body>
 </html>"""
 

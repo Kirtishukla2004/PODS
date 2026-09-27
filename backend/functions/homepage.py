@@ -15,6 +15,6 @@ share data with third parties.</p>
 </html>"""
 
 
-@app.route(route="/", auth_level=func.AuthLevel.ANONYMOUS)
+@app.route(route="home", auth_level=func.AuthLevel.ANONYMOUS)
 def Homepage(req: func.HttpRequest) -> func.HttpResponse:
     return func.HttpResponse(HOMEPAGE_HTML, mimetype="text/html")

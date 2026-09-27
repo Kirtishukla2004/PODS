@@ -1,12 +1,12 @@
 from function_app import app
 import azure.functions as func
 import logging
-from functions import homepage
 from functions import privacy_policy
 from functions import google_verification
 from services.blob_uploader import upload_file
 from services.service_bus_sender import send_to_queue
 from services.email_tracker import is_processed, mark_processed
+from functions import homepage
 from services.email_fetcher import (
     GmailAuthError,
     fetch_emails,
@@ -19,6 +19,11 @@ from services.file_processor import (
     get_attachment_bytes,
     convert_email_to_pdf,
 )
+# NOTE: this opens a real browser + local server for OAuth consent.
+# Only works when this Function host is running locally (func start).
+# Deployed (Azure/Render), there is no browser, so this WILL hang until
+# timeout — do not rely on this path in a real deployment.
+from scripts.generate_token import main as regenerate_gmail_token
 
 
 @app.timer_trigger(
@@ -33,7 +38,15 @@ def EmailIngestion(myTimer: func.TimerRequest) -> None:
         emails = fetch_emails()
     except GmailAuthError as e:
         logging.error(f"Gmail auth needs manual intervention: {e}")
-        return  # or send an alert/notification here
+        logging.info(
+            "Attempting to regenerate Gmail token (local OAuth flow)...")
+        try:
+            regenerate_gmail_token()
+            emails = fetch_emails()
+        except Exception as regen_err:
+            logging.error(
+                f"Automatic token regeneration failed, aborting run: {regen_err}")
+            return
 
     logging.info(f"Found {len(emails)} unread emails")
 
@@ -71,11 +84,20 @@ def EmailIngestion(myTimer: func.TimerRequest) -> None:
                 service = get_gmail_service()
             except GmailAuthError as e:
                 # Token died mid-run (or between the fetch_emails() call and
-                # here). Stop processing entirely rather than logging every
-                # remaining email as an individual failure.
+                # here). Try regenerating once; if that also fails, stop
+                # processing entirely rather than logging every remaining
+                # email as an individual failure.
                 logging.error(
-                    f"Gmail auth lost mid-run, aborting remaining emails: {e}")
-                break
+                    f"Gmail auth lost mid-run: {e}")
+                logging.info(
+                    "Attempting to regenerate Gmail token (local OAuth flow)...")
+                try:
+                    regenerate_gmail_token()
+                    service = get_gmail_service()
+                except Exception as regen_err:
+                    logging.error(
+                        f"Automatic token regeneration failed, aborting remaining emails: {regen_err}")
+                    break
 
             attachments = fetch_attachments(
                 service, email_id, email_data["payload"])

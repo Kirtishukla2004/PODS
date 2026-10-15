@@ -75,5 +75,5 @@ local.settings.json
 node_modules/
 package-lock.json
 package.json
-config/credentials.json
-config/gmail_token.json
+credentials.json
+gmail_token.json

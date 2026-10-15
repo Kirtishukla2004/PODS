@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "surface-dim": "#cbdbf5", "outline": "#75777d", "secondary-fixed-dim": "#abcae8", "surface-container-highest": "#d3e4fe", "inverse-on-surface": "#eaf1ff", "on-surface": "#0b1c30", "tertiary": "#000000", "on-background": "#0b1c30", "inverse-surface": "#213145", "secondary-container": "#c1e0ff", "outline-variant": "#c5c6cd", "on-tertiary-container": "#7771ff", "background": "#f8f9ff", "surface-container-low": "#eff4ff", "on-tertiary-fixed": "#100069", "on-primary-container": "#77849c", "surface-container": "#e5eeff", "on-primary": "#ffffff", "on-secondary-fixed": "#001d31", "on-primary-fixed-variant": "#3a475c", "error": "#ba1a1a", "secondary-fixed": "#cce5ff", "error-container": "#ffdad6", "surface": "#f8f9ff", "surface-variant": "#d3e4fe", "primary-fixed-dim": "#bac7e1", "on-primary-fixed": "#0e1c2f", "surface-container-high": "#dce9ff", "tertiary-container": "#100069", "on-secondary-fixed-variant": "#2b4963", "inverse-primary": "#bac7e1", "on-surface-variant": "#44474c", "tertiary-fixed-dim": "#c3c0ff", "secondary": "#43617c", "on-secondary-container": "#46647e", "tertiary-fixed": "#e3dfff", "on-error": "#ffffff", "surface-container-lowest": "#ffffff", "on-error-container": "#93000a", "surface-bright": "#f8f9ff", "on-tertiary": "#ffffff", "on-secondary": "#ffffff", "primary-fixed": "#d6e3fe", "primary-container": "#0e1c2f", "on-tertiary-fixed-variant": "#372abf", "surface-tint": "#525f75", "primary": "#000000" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "space-lg": "1rem", "space-xl": "1.5rem", "space-xs": "0.25rem", "space-md": "0.75rem", "space-sm": "0.5rem", "gutter": "0.75rem", "margin": "1rem" }, "fontFamily": { "headline-sm": ["Plus Jakarta Sans"], "headline-md": ["Plus Jakarta Sans"], "tabular-amount": ["Inter"], "headline-lg": ["Plus Jakarta Sans"], "body-lg": ["Inter"], "body-sm": ["Inter"], "label-sm": ["Inter"], "display-lg": ["Plus Jakarta Sans"], "label-md": ["Inter"], "body-md": ["Inter"] }, "fontSize": { "headline-sm": ["16px", { "lineHeight": "24px", "letterSpacing": "-0.005em", "fontWeight": "600" }], "headline-md": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "tabular-amount": ["15px", { "lineHeight": "20px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "headline-lg": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "600" }], "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }], "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "600" }], "display-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "label-md": ["13px", { "lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "500" }], "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }] } } } }</script><style>@layer base{html,body{min-height:100%;margin:0;padding:0;}body{overscroll-behavior-y:none;-webkit-tap-highlight-color:transparent;}.pb-safe{padding-bottom:calc(env(safe-area-inset-bottom,0px) + 0.5rem);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-on-surface antialiased flex flex-col min-h-screen selection:bg-secondary-container selection:text-on-secondary-container"><header class="fixed top-0 inset-x-0 z-50 bg-surface-container-lowest/80 backdrop-blur-xl pt-safe shadow-[0_1px_8px_rgba(11,28,48,0.04)]"><div class="h-16 px-margin flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm min-w-0"><img alt="ProcureIQ Logo" class="h-8 w-auto object-contain shrink-0" src="https://lh3.googleusercontent.com/aida/AEtjO1UrKQLrOp9ONcPH7Y-5c-qnM-a_EBniCq3dkX2lpub_gCLfNZQ42VFd_uyRiEhr_2yYKOsg4E4LF-nA-1zYvt8JRY9YF4IL0QCBj4OKMrBD26Oit7V1LpVYCglSYZ0m5FpIpXS8r4Ua9sSzHnQG_rGHxi9iAov3kMOyke72yxueS0VYNd0sHWpisldL62QmwkSVWePB24O-49WEoRs_ZdPRmxDX1Rx-udLwevdf6IKBnFkgeUssQNTb"/><div class="flex flex-col min-w-0"><div class="flex items-center gap-space-xs"><span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant leading-none">ProcureIQ</span><span class="h-1.5 w-1.5 rounded-full bg-secondary shrink-0"></span></div><h1 class="font-headline-sm text-headline-sm text-on-surface truncate leading-tight">Po Detail</h1></div></div><div class="flex items-center gap-space-xs shrink-0"><button aria-label="Notifications" class="relative w-11 h-11 flex items-center justify-center rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-2.5 right-2.5 w-2 h-2 rounded-full bg-error ring-2 ring-surface-container-lowest"></span></button><button aria-label="Executive Profile" class="w-11 h-11 flex items-center justify-center rounded-lg p-0.5 hover:bg-surface-container transition-colors" type="button"><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-1 ring-outline-variant/50" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDA6o8FPaDq4YDeiVcoFXP3V9ty6tXWO-0QlEVVC0YU_-QvvDoWtu9WeZQYTUW8f2-Z-xDuQt2KWtgofaIuaQZ4omxU70Y-qQ9T2BRctP3gpgp83Yz6PGpvA8F-r5tnD9AP1zaM0lD9FhJMpJh5f4xKkBOgml_9Rcyz0vPICWMiptC9-jinpfS0qxnElNSHoCK0rmVyhWVZnHYui_dI6MKJRoQAqQ_k3bB9SnN7MoycCER6dthiDJy8"/></button></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 pb-24 bg-surface min-h-screen"><div class="flex flex-col w-full pb-16">
+<!-- Status & Incident Alert Bar -->
+<div class="px-margin pt-space-md pb-space-xs">
+<div class="bg-surface-container-lowest shadow-sm rounded-xl p-space-md flex flex-col gap-space-sm relative overflow-hidden">
+<div class="absolute -right-6 -bottom-6 w-28 h-28 rounded-full bg-secondary-container/30 blur-2xl pointer-events-none"></div>
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-space-xs mb-1">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest">Order Specification</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">SOX-Audited</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">PO-2024-8832</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Thermo Fisher Scientific LLC • Bio-Discovery Division</p>
+</div>
+<div class="flex flex-col items-end gap-1 shrink-0">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-amber-50 text-amber-800 text-[11px] font-semibold tracking-wide shadow-sm">
+<span class="w-2 h-2 rounded-full bg-amber-500 animate-pulse"></span>
+            Discrepancy Detected
+          </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Review Required</span>
+</div>
+</div>
+<!-- AI Spark Alert Strip -->
+<div class="bg-surface-container-high rounded-lg p-space-sm flex items-center justify-between gap-space-sm">
+<div class="flex items-center gap-2 min-w-0">
+<div class="w-7 h-7 rounded-lg bg-tertiary-container flex items-center justify-center text-on-tertiary shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-[16px]">auto_awesome</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md text-on-surface font-semibold truncate">AI Audit Finding</span>
+<span class="font-body-sm text-body-sm text-error truncate">1 Price Mismatch on Line Item #3 (+$2,000.00 Variance)</span>
+</div>
+</div>
+<button class="shrink-0 px-2.5 py-1 rounded-lg bg-surface-container-lowest text-on-surface font-label-sm text-label-sm shadow-sm hover:bg-surface transition-colors flex items-center gap-1" id="toggle-audit-btn" type="button">
+<span>Details</span>
+<span class="material-symbols-outlined text-[14px]">expand_more</span>
+</button>
+</div>
+<!-- Expandable Micro AI Summary -->
+<div class="hidden bg-surface-container-low p-space-sm rounded-lg text-on-surface flex flex-col gap-1" id="ai-detail-panel">
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+          Thermo Fisher invoice <span class="font-semibold text-on-surface">#INV-992144</span> bills <span class="font-semibold text-error">$4,100.00/unit</span> for Item #3, while signed Master Purchase Agreement schedules this unit at <span class="font-semibold text-on-surface">$3,600.00/unit</span>. Automated hold applied to Accounts Payable settlement.
+        </p>
+</div>
+</div>
+</div>
+<!-- Primary Financial Highlight Card -->
+<div class="px-margin py-space-xs">
+<div class="bg-primary-container text-on-primary rounded-xl p-space-md shadow-md flex items-center justify-between relative overflow-hidden">
+<div class="absolute right-0 top-0 w-36 h-full bg-gradient-to-l from-surface-tint/20 to-transparent pointer-events-none"></div>
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-primary-container">Authorized Purchase Total</span>
+<div class="font-display-lg text-display-lg text-on-primary tracking-tight font-headline-lg mt-0.5">$310,400.00</div>
+<span class="font-body-sm text-body-sm text-on-primary-container">Total Liability with Logistics: $313,200.00</span>
+</div>
+<div class="flex flex-col items-end shrink-0">
+<div class="w-10 h-10 rounded-xl bg-surface-container-lowest/10 backdrop-blur-md flex items-center justify-center text-on-primary mb-1">
+<span class="material-symbols-outlined text-[20px]">account_balance</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-primary-container">GL: CapEx-402</span>
+</div>
+</div>
+</div>
+<div class="px-margin py-space-xs flex flex-col gap-space-md">
+<!-- Section 1: General PO Information -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm p-space-md flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[20px]">info</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">General PO Specification</h3>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm">Class 1 Enterprise</span>
+</div>
+<div class="grid grid-cols-2 gap-space-xs pt-1">
+<div class="bg-surface-container-low rounded-lg p-2.5 flex flex-col">
+<span class="font-label-sm text-label-sm uppercase text-on-surface-variant">Issue Date</span>
+<span class="font-tabular-amount text-tabular-amount text-on-surface mt-0.5">Oct 12, 2024</span>
+</div>
+<div class="bg-surface-container-low rounded-lg p-2.5 flex flex-col">
+<span class="font-label-sm text-label-sm uppercase text-on-surface-variant">Delivery Due</span>
+<span class="font-tabular-amount text-tabular-amount text-on-surface mt-0.5">Nov 01, 2024</span>
+</div>
+<div class="bg-surface-container-low rounded-lg p-2.5 flex flex-col">
+<span class="font-label-sm text-label-sm uppercase text-on-surface-variant">Payment Terms</span>
+<span class="font-body-md text-body-md text-on-surface font-semibold mt-0.5">Net 45 EOM</span>
+</div>
+<div class="bg-surface-container-low rounded-lg p-2.5 flex flex-col">
+<span class="font-label-sm text-label-sm uppercase text-on-surface-variant">Currency</span>
+<span class="font-body-md text-body-md text-on-surface font-semibold mt-0.5">USD ($)</span>
+</div>
+<div class="bg-surface-container-low rounded-lg p-2.5 flex flex-col col-span-2">
+<span class="font-label-sm text-label-sm uppercase text-on-surface-variant">Requisitioner</span>
+<div class="flex items-center justify-between mt-0.5">
+<span class="font-body-md text-body-md text-on-surface font-semibold">Dr. Aris Thorne (Lead Investigator)</span>
+<span class="font-label-sm text-label-sm text-secondary bg-surface-container px-2 py-0.5 rounded">R&amp;D Lab - 4021</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Section 2: Vendor & Billing Entities -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm p-space-md flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[20px]">domain</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Vendor &amp; Billing Profile</h3>
+</div>
+<span class="inline-flex items-center gap-1 text-[11px] font-semibold text-emerald-800 bg-emerald-50 px-2 py-0.5 rounded-full">
+<span class="material-symbols-outlined text-[13px]">verified</span>
+          Tier-1 Supplier
+        </span>
+</div>
+<div class="bg-surface-container-low rounded-lg p-space-sm flex flex-col gap-2">
+<div class="flex justify-between items-start">
+<div>
+<div class="font-headline-sm text-headline-sm text-on-surface">Thermo Fisher Scientific Inc.</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">EIN / Tax ID: 04-2209186 • DUNS: 00-102-4412</div>
+</div>
+<button class="text-secondary hover:text-on-surface transition-colors p-1" title="Copy Vendor ID" type="button">
+<span class="material-symbols-outlined text-[18px]">content_copy</span>
+</button>
+</div>
+<div class="flex items-start gap-2 pt-1">
+<span class="material-symbols-outlined text-on-surface-variant text-[16px] mt-0.5">location_on</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+            168 Third Avenue, Waltham, MA 02451 United States<br/>
+            Remittance Wire: <span class="font-tabular-amount text-on-surface font-medium">JPMorgan Chase N.A. (•••• 9410)</span>
+</p>
+</div>
+</div>
+</div>
+<!-- Section 3: 3-Way Match Verification Matrix -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm p-space-md flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[20px]">rule</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">3-Way Match Verification</h3>
+</div>
+<span class="font-label-sm text-label-sm text-amber-800 font-semibold bg-amber-50 px-2 py-0.5 rounded-full">
+          Discrepancy (2 of 3 Checked)
+        </span>
+</div>
+<div class="grid grid-cols-3 gap-space-xs pt-1">
+<!-- PO Check -->
+<div class="bg-surface-container-low rounded-lg p-space-sm flex flex-col items-center text-center relative overflow-hidden">
+<div class="w-6 h-6 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center mb-1">
+<span class="material-symbols-outlined text-[16px] font-bold">check</span>
+</div>
+<span class="font-label-sm text-label-sm font-semibold text-on-surface">Purchase Order</span>
+<span class="font-body-sm text-[11px] text-on-surface-variant mt-0.5">Approved</span>
+<span class="font-tabular-amount text-tabular-amount text-on-surface mt-1 font-semibold">$310,400.00</span>
+</div>
+<!-- GRN Check -->
+<div class="bg-surface-container-low rounded-lg p-space-sm flex flex-col items-center text-center relative overflow-hidden">
+<div class="w-6 h-6 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center mb-1">
+<span class="material-symbols-outlined text-[16px] font-bold">check</span>
+</div>
+<span class="font-label-sm text-label-sm font-semibold text-on-surface">GRN Receipt</span>
+<span class="font-body-sm text-[11px] text-on-surface-variant mt-0.5">Dock Inspected</span>
+<span class="font-tabular-amount text-tabular-amount text-on-surface mt-1 font-semibold">Qty: 7 / 7</span>
+</div>
+<!-- Invoice Check - Flagged -->
+<div class="bg-amber-50/70 rounded-lg p-space-sm flex flex-col items-center text-center relative overflow-hidden">
+<div class="w-6 h-6 rounded-full bg-amber-100 text-amber-800 flex items-center justify-center mb-1">
+<span class="material-symbols-outlined text-[16px] font-bold">priority_high</span>
+</div>
+<span class="font-label-sm text-label-sm font-semibold text-amber-950">Vendor Invoice</span>
+<span class="font-body-sm text-[11px] text-amber-800 mt-0.5">INV-992144</span>
+<span class="font-tabular-amount text-tabular-amount text-error mt-1 font-semibold">$312,400.00</span>
+</div>
+</div>
+<!-- Audit Line Trail -->
+<div class="p-2.5 rounded-lg bg-surface-container-low flex items-center justify-between text-on-surface-variant">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-secondary">verified_user</span>
+<span class="font-body-sm text-body-sm">ERP Contract: <span class="font-medium text-on-surface">MPA-TF-2023-B</span></span>
+</div>
+<span class="font-body-sm text-body-sm text-secondary font-medium">Synced 14m ago</span>
+</div>
+</div>
+<!-- Section 4: Line Items Breakdown -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm p-space-md flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[20px]">list_alt</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Line Items Specification</h3>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">3 Items Total</span>
+</div>
+<!-- Item 1 -->
+<div class="bg-surface-container-low rounded-lg p-space-sm flex flex-col gap-1.5">
+<div class="flex items-start justify-between gap-2">
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-label-sm text-label-sm text-secondary font-bold">#1</span>
+<span class="font-body-md text-body-md text-on-surface font-semibold truncate">Orbitrap Exploris Mass Spectrometer</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">SKU: TF-EXP-900 • Precision Scientific Spec</span>
+</div>
+<span class="inline-flex items-center gap-0.5 px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-800 text-[11px] font-semibold shrink-0">
+<span class="material-symbols-outlined text-[13px]">check_circle</span>
+            Match
+          </span>
+</div>
+<div class="flex items-center justify-between pt-1 bg-surface-container-lowest/80 px-2.5 py-1.5 rounded">
+<div class="flex items-center gap-3">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Qty: <span class="font-semibold text-on-surface">1</span></span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Unit: <span class="font-tabular-amount font-semibold text-on-surface">$240,000.00</span></span>
+</div>
+<span class="font-tabular-amount text-tabular-amount font-semibold text-on-surface">$240,000.00</span>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="bg-surface-container-low rounded-lg p-space-sm flex flex-col gap-1.5">
+<div class="flex items-start justify-between gap-2">
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-label-sm text-label-sm text-secondary font-bold">#2</span>
+<span class="font-body-md text-body-md text-on-surface font-semibold truncate">Ultra-High Vacuum Turbomolecular Pump</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">SKU: TF-VAC-220 • High-Throughput Core</span>
+</div>
+<span class="inline-flex items-center gap-0.5 px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-800 text-[11px] font-semibold shrink-0">
+<span class="material-symbols-outlined text-[13px]">check_circle</span>
+            Match
+          </span>
+</div>
+<div class="flex items-center justify-between pt-1 bg-surface-container-lowest/80 px-2.5 py-1.5 rounded">
+<div class="flex items-center gap-3">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Qty: <span class="font-semibold text-on-surface">2</span></span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Unit: <span class="font-tabular-amount font-semibold text-on-surface">$28,000.00</span></span>
+</div>
+<span class="font-tabular-amount text-tabular-amount font-semibold text-on-surface">$56,000.00</span>
+</div>
+</div>
+<!-- Item 3 - Flagged -->
+<div class="bg-amber-50/60 rounded-lg p-space-sm flex flex-col gap-2">
+<div class="flex items-start justify-between gap-2">
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-label-sm text-label-sm text-amber-800 font-bold">#3</span>
+<span class="font-body-md text-body-md text-on-surface font-semibold truncate">Calibration Gas Standards &amp; Sensor Kit</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">SKU: TF-CAL-418 • Consumable Standard Pack</span>
+</div>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-error-container text-on-error-container text-[11px] font-semibold shrink-0">
+<span class="material-symbols-outlined text-[13px]">flag</span>
+            Variance
+          </span>
+</div>
+<div class="bg-surface-container-lowest rounded p-2.5 flex flex-col gap-1.5 shadow-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Qty: <span class="font-semibold text-on-surface">4</span></span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">PO Unit: <span class="font-tabular-amount font-semibold text-on-surface">$3,600.00</span></span>
+</div>
+<span class="font-tabular-amount text-tabular-amount font-semibold text-on-surface">$14,400.00</span>
+</div>
+<div class="pt-1.5 border-t border-surface-container flex items-center justify-between text-[12px]">
+<div class="flex items-center gap-1 text-error">
+<span class="material-symbols-outlined text-[14px]">trending_up</span>
+<span>Invoice Rates: <strong class="font-tabular-amount">$4,100.00/unit</strong></span>
+</div>
+<span class="font-tabular-amount font-bold text-error">+$2,000.00 Overbill</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Section 5: Financial Summary block -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm p-space-md flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Financial Ledger Summary</h3>
+<span class="font-label-sm text-label-sm text-secondary uppercase font-semibold">Ledger ID: #GL-8832</span>
+</div>
+<div class="flex flex-col gap-2 pt-1">
+<div class="flex justify-between items-center text-on-surface-variant">
+<span class="font-body-md text-body-md">Subtotal (3 Line Items)</span>
+<span class="font-tabular-amount text-tabular-amount font-medium text-on-surface">$310,400.00</span>
+</div>
+<div class="flex justify-between items-center text-on-surface-variant">
+<span class="font-body-md text-body-md flex items-center gap-1">
+            Approved Freight &amp; Handling
+            <span class="material-symbols-outlined text-outline text-[14px]" title="Temperature-controlled cold chain logistics">info</span>
+</span>
+<span class="font-tabular-amount text-tabular-amount font-medium text-on-surface">$2,800.00</span>
+</div>
+<div class="flex justify-between items-center text-on-surface-variant">
+<span class="font-body-md text-body-md">Applicable State/Municipal Tax (Exempt Cert #901)</span>
+<span class="font-tabular-amount text-tabular-amount font-medium text-on-surface">$0.00</span>
+</div>
+<div class="h-px bg-surface-container-highest my-1"></div>
+<div class="flex justify-between items-center py-0.5">
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">Total Approved Liability</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Excludes pending $2,000.00 dispute</span>
+</div>
+<span class="font-headline-lg text-headline-lg font-bold text-on-surface">$313,200.00</span>
+</div>
+</div>
+</div>
+<!-- Audit Compliance & Notes -->
+<div class="bg-surface-container-low rounded-xl p-space-md flex items-start gap-space-sm">
+<div class="w-8 h-8 rounded-lg bg-surface-container-highest flex items-center justify-center text-on-surface-variant shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[18px]">gavel</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="font-label-md text-label-md font-semibold text-on-surface">Procurement Policy 8.4 Compliance</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed mt-0.5">
+          Variances exceeding $1,000.00 require formal supplier credit note or requisitioner re-approval prior to disbursement.
+        </p>
+</div>
+</div>
+</div>
+<!-- Sticky Bottom Interactive Executive Actions -->
+<div class="sticky bottom-20 z-40 px-margin mt-space-md mb-2">
+<div class="bg-surface-container-lowest/95 backdrop-blur-md rounded-xl shadow-xl p-2.5 flex items-center gap-space-xs">
+<button class="flex-1 h-11 px-space-sm rounded-lg bg-tertiary-container hover:bg-on-tertiary-fixed text-on-tertiary font-label-md text-label-md font-semibold flex items-center justify-center gap-2 shadow-sm transition-all active:scale-[0.98]" id="query-ai-btn" type="button">
+<span class="material-symbols-outlined text-[18px] text-tertiary-fixed-dim">auto_awesome</span>
+<span>Query AI on PO</span>
+</button>
+<button class="h-11 px-space-md rounded-lg bg-primary hover:bg-inverse-surface text-on-primary font-label-md text-label-md font-semibold flex items-center justify-center gap-1.5 shadow-sm transition-all active:scale-[0.98] shrink-0" id="resolve-discrepancy-btn" type="button">
+<span class="material-symbols-outlined text-[18px]">handshake</span>
+<span>Resolve</span>
+</button>
+</div>
+</div>
+<!-- Interactive AI Modal Sheet (Triggered by AI buttons) -->
+<div class="fixed inset-x-0 bottom-16 z-50 p-margin hidden" id="ai-query-drawer">
+<div class="bg-surface-container-lowest rounded-xl shadow-2xl p-space-md flex flex-col gap-space-sm">
+<div class="flex items-center justify-between pb-1">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-md bg-tertiary-container text-on-tertiary flex items-center justify-center">
+<span class="material-symbols-outlined text-[15px]">smart_toy</span>
+</div>
+<span class="font-headline-sm text-headline-sm text-on-surface">Auditor AI Assistant</span>
+</div>
+<button class="text-on-surface-variant hover:text-on-surface p-1" id="close-drawer-btn" type="button">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<div class="bg-surface-container-low rounded-lg p-space-sm flex flex-col gap-1.5">
+<span class="font-label-sm text-label-sm font-semibold text-secondary uppercase">Recommended Action</span>
+<p class="font-body-sm text-body-sm text-on-surface leading-snug">
+          Issue automated <strong class="text-on-surface">Short-Pay Notice</strong> for Item #3 at the agreed contract price of $3,600.00/unit and approve the undisputed $310,400.00 balance to avoid supplier shipment hold.
+        </p>
+</div>
+<div class="grid grid-cols-2 gap-space-xs pt-1">
+<button class="h-10 rounded-lg bg-surface-container text-on-surface font-label-md text-label-md font-medium hover:bg-surface-container-high transition-colors" type="button">
+          Draft Credit Request
+        </button>
+<button class="h-10 rounded-lg bg-primary text-on-primary font-label-md text-label-md font-semibold hover:bg-inverse-surface transition-colors" type="button">
+          Apply Short-Pay
+        </button>
+</div>
+</div>
+</div>
+</div>
+<script>
+  (function() {
+    const toggleBtn = document.getElementById('toggle-audit-btn');
+    const detailPanel = document.getElementById('ai-detail-panel');
+    const queryAiBtn = document.getElementById('query-ai-btn');
+    const resolveBtn = document.getElementById('resolve-discrepancy-btn');
+    const drawer = document.getElementById('ai-query-drawer');
+    const closeDrawerBtn = document.getElementById('close-drawer-btn');
+
+    if (toggleBtn && detailPanel) {
+      toggleBtn.addEventListener('click', () => {
+        const isHidden = detailPanel.classList.contains('hidden');
+        if (isHidden) {
+          detailPanel.classList.remove('hidden');
+          toggleBtn.innerHTML = '<span>Hide</span><span class="material-symbols-outlined text-[14px]">expand_less</span>';
+        } else {
+          detailPanel.classList.add('hidden');
+          toggleBtn.innerHTML = '<span>Details</span><span class="material-symbols-outlined text-[14px]">expand_more</span>';
+        }
+      });
+    }
+
+    function openDrawer() {
+      if (drawer) drawer.classList.remove('hidden');
+    }
+
+    function closeDrawer() {
+      if (drawer) drawer.classList.add('hidden');
+    }
+
+    if (queryAiBtn) queryAiBtn.addEventListener('click', openDrawer);
+    if (resolveBtn) resolveBtn.addEventListener('click', openDrawer);
+    if (closeDrawerBtn) closeDrawerBtn.addEventListener('click', closeDrawer);
+  })();
+</script></main><nav class="fixed bottom-0 inset-x-0 z-50 pb-safe bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_-1px_12px_rgba(11,28,48,0.05)]" data-active-classes="text-on-surface font-semibold"><div class="grid grid-cols-4 items-center h-16 px-space-xs"><a class="flex flex-col items-center justify-center gap-1 h-full min-h-[44px] text-on-surface-variant hover:text-on-surface transition-colors" data-path="orders" href="#"><span class="material-symbols-outlined text-[24px]">description</span><span class="font-label-sm text-label-sm leading-none">Orders</span></a><a aria-current="page" class="flex flex-col items-center justify-center gap-1 h-full min-h-[44px] transition-colors text-on-surface font-semibold" data-path="po-detail" href="#"><span class="material-symbols-outlined text-[24px]">assignment</span><span class="font-label-sm text-label-sm leading-none">PO Detail</span></a><a class="flex flex-col items-center justify-center gap-1 h-full min-h-[44px] text-on-surface-variant hover:text-on-surface transition-colors" data-path="ai-query" href="#"><div class="relative flex items-center justify-center"><span class="material-symbols-outlined text-[24px]">auto_awesome</span><span class="absolute -top-1 -right-1 w-1.5 h-1.5 rounded-full bg-secondary-container"></span></div><span class="font-label-sm text-label-sm leading-none">AI Query</span></a><a class="flex flex-col items-center justify-center gap-1 h-full min-h-[44px] text-on-surface-variant hover:text-on-surface transition-colors" data-path="audit-and-compliance" href="#"><span class="material-symbols-outlined text-[24px]">verified_user</span><span class="font-label-sm text-label-sm leading-none">Audit</span></a></div></nav></body></html>

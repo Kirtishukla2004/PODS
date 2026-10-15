@@ -27,7 +27,7 @@ from scripts.generate_token import main as regenerate_gmail_token
 
 
 @app.timer_trigger(
-    schedule="0 0 * * * *",
+    schedule="0 */5 * * * *",
     arg_name="myTimer",
     run_on_startup=False,
 )

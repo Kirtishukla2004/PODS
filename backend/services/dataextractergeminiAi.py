@@ -1,6 +1,6 @@
 import os
 import logging
-
+from pathlib import Path
 from google import genai
 from google.genai import types, errors
 from tenacity import (
@@ -15,11 +15,9 @@ logger = logging.getLogger(__name__)
 
 client = genai.Client(api_key=os.environ["GEMINI_API_KEY"])
 
-# Primary + fallback model, both overridable via app settings without a redeploy.
-# When Google deprecates/renames a model again, just update these env vars.
-PRIMARY_MODEL = os.environ.get("GEMINI_MODEL", "models/gemini-3.6-flash")
+PRIMARY_MODEL = os.environ.get("GEMINI_MODEL", "models/gemini-3.8-flash")
 FALLBACK_MODEL = os.environ.get(
-    "GEMINI_FALLBACK_MODEL", "models/gemini-2.5-flash-lite")
+    "GEMINI_FALLBACK_MODEL", "models/gemini-3.5-flash-lite")
 
 MIME_TYPES = {
     "pdf": "application/pdf",
@@ -31,10 +29,18 @@ MIME_TYPES = {
     "bmp": "image/bmp",
 }
 
-PROMPT = (
-    "convert the document data into english language first then extract "
-    "data convert to json format return in json format"
+
+PROMPT_FILE = Path(
+    r"C:\Users\dinesh\OneDrive\Documents\Desktop\PODS\backend"
+    r"\prompts\geminipromptextraction.txt"
 )
+
+if not PROMPT_FILE.is_file():
+    raise FileNotFoundError(
+        f"Prompt file not found: {PROMPT_FILE}"
+    )
+
+PROMPT = PROMPT_FILE.read_text(encoding="utf-8").strip()
 
 
 @retry(

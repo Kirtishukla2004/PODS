@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"surface-container-low":"#eff4ff","inverse-primary":"#bac7e1","on-secondary-fixed":"#001d31","secondary-container":"#c1e0ff","primary-fixed":"#d6e3fe","tertiary-container":"#100069","on-primary-container":"#77849c","on-tertiary":"#ffffff","error-container":"#ffdad6","on-secondary-container":"#46647e","on-secondary":"#ffffff","on-surface":"#0b1c30","inverse-on-surface":"#eaf1ff","on-primary":"#ffffff","secondary":"#43617c","outline-variant":"#c5c6cd","on-tertiary-fixed":"#100069","surface":"#f8f9ff","primary-fixed-dim":"#bac7e1","on-error":"#ffffff","surface-container":"#e5eeff","secondary-fixed-dim":"#abcae8","tertiary":"#000000","surface-variant":"#d3e4fe","surface-container-lowest":"#ffffff","surface-container-high":"#dce9ff","on-tertiary-fixed-variant":"#372abf","on-primary-fixed-variant":"#3a475c","on-secondary-fixed-variant":"#2b4963","tertiary-fixed-dim":"#c3c0ff","primary-container":"#0e1c2f","on-primary-fixed":"#0e1c2f","surface-dim":"#cbdbf5","on-tertiary-container":"#7771ff","outline":"#75777d","surface-tint":"#525f75","background":"#f8f9ff","surface-container-highest":"#d3e4fe","on-error-container":"#93000a","tertiary-fixed":"#e3dfff","secondary-fixed":"#cce5ff","inverse-surface":"#213145","error":"#ba1a1a","on-background":"#0b1c30","primary":"#000000","surface-bright":"#f8f9ff","on-surface-variant":"#44474c"},borderRadius:{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},spacing:{"space-xs":"0.25rem","gutter":"0.75rem","space-xl":"1.5rem","margin":"1rem","space-md":"0.75rem","space-lg":"1rem","space-sm":"0.5rem"},fontFamily:{"headline-md":["Plus Jakarta Sans"],"body-lg":["Inter"],"headline-lg":["Plus Jakarta Sans"],"body-md":["Inter"],"tabular-amount":["Inter"],"headline-sm":["Plus Jakarta Sans"],"label-sm":["Inter"],"body-sm":["Inter"],"label-md":["Inter"],"display-lg":["Plus Jakarta Sans"]},fontSize:{"headline-md":["20px",{lineHeight:"28px",letterSpacing:"-0.01em",fontWeight:"600"}],"body-lg":["16px",{lineHeight:"24px",fontWeight:"400"}],"headline-lg":["24px",{lineHeight:"32px",letterSpacing:"-0.015em",fontWeight:"600"}],"body-md":["14px",{lineHeight:"20px",fontWeight:"400"}],"tabular-amount":["15px",{lineHeight:"20px",letterSpacing:"-0.01em",fontWeight:"600"}],"headline-sm":["16px",{lineHeight:"24px",letterSpacing:"-0.005em",fontWeight:"600"}],"label-sm":["11px",{lineHeight:"14px",letterSpacing:"0.04em",fontWeight:"600"}],"body-sm":["12px",{lineHeight:"16px",fontWeight:"400"}],"label-md":["13px",{lineHeight:"18px",letterSpacing:"0.01em",fontWeight:"500"}],"display-lg":["32px",{lineHeight:"40px",letterSpacing:"-0.02em",fontWeight:"700"}]}}}}</script></head><body class="bg-background font-body-md text-on-surface antialiased min-h-screen"><header class="fixed top-0 w-full z-50 bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 w-full px-8 flex items-center justify-between gap-space-lg"><div class="flex items-center gap-space-xl"><div class="flex items-center gap-space-sm"><div class="w-7 h-7 rounded-lg bg-primary-container flex items-center justify-center"><span class="material-symbols-outlined text-primary-fixed text-[18px]">verified_user</span></div><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight uppercase">Procure<span class="text-secondary">IQ</span></span></div><div class="h-4 w-px bg-outline-variant"></div><nav class="flex items-center gap-space-xs" data-active-classes="bg-surface-container text-on-surface font-semibold rounded-lg"><a aria-current="page" class="px-space-md py-space-xs transition-colors bg-surface-container text-on-surface font-semibold rounded-lg" data-path="purchase-orders" href="#">Purchase Orders</a><a class="px-space-md py-space-xs rounded-lg font-label-md text-label-md text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="ai-audit-queue" href="#">AI Audit Queue</a><a class="px-space-md py-space-xs rounded-lg font-label-md text-label-md text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="vendor-management" href="#">Vendors</a><a class="px-space-md py-space-xs rounded-lg font-label-md text-label-md text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="compliance-reports" href="#">Compliance</a></nav></div><div class="flex items-center gap-space-lg"><div class="relative flex items-center"><span class="material-symbols-outlined absolute left-3 text-outline text-[18px]">search</span><input class="w-64 pl-9 pr-space-md py-space-xs rounded-lg bg-surface-container-low font-body-sm text-body-sm text-on-surface placeholder:text-outline focus:outline-none focus:bg-surface-container-lowest focus:ring-1 focus:ring-primary-container transition-all" placeholder="Search PO #, vendor, or discrepancy..." type="text"/></div><button aria-label="Notifications" class="relative p-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-error"></span></button><div class="h-4 w-px bg-outline-variant"></div><div class="flex items-center gap-space-sm"><div class="text-right hidden sm:block"><div class="font-label-md text-label-md text-on-surface leading-none">Eleanor Vance</div><div class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mt-0.5">Chief Auditor</div></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></div></header><main class="w-full pt-16 bg-background min-h-screen"><div class="flex flex-col w-full">
+<div class="w-full px-8 py-8 flex flex-col gap-6 max-w-[1600px] mx-auto">
+<!-- Top Command Strip & Executive Status -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary">Fiscal Cycle Q2 2025</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Live Continuous Reconciliation
+          </span>
+</div>
+<div class="font-headline-lg text-headline-lg text-on-surface font-semibold tracking-tight">Purchase Orders Ledger</div>
+</div>
+<div class="flex items-center gap-3">
+<button class="px-4 py-2 bg-surface-container-low hover:bg-surface-container transition-all rounded-lg flex items-center gap-2 font-label-md text-label-md text-on-surface">
+<span class="material-symbols-outlined text-[18px] text-secondary">tune</span>
+          Audit Configuration
+        </button>
+<button class="px-4 py-2 bg-primary text-on-primary hover:bg-primary-container transition-all rounded-lg flex items-center gap-2 font-label-md text-label-md shadow-sm">
+<span class="material-symbols-outlined text-[18px]">add</span>
+          Create Purchase Order
+        </button>
+</div>
+</div>
+<!-- Minimalist Summary KPI Cards -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+<!-- Total Orders -->
+<div class="bg-surface-container-lowest rounded-xl p-5 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between relative overflow-hidden group">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Active PO Volume</span>
+<div class="w-8 h-8 rounded-lg bg-surface-container-low flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[18px]">receipt_long</span>
+</div>
+</div>
+<div class="mt-4 flex items-baseline justify-between">
+<div>
+<div class="font-display-lg text-display-lg text-on-surface leading-none">1,428</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant mt-1.5 flex items-center gap-1.5">
+<span class="text-emerald-600 font-medium flex items-center">
+<span class="material-symbols-outlined text-[14px]">trending_up</span> +8.4%
+              </span>
+<span>vs past cycle</span>
+</div>
+</div>
+<!-- Inline Sparkline Visual -->
+<svg class="w-20 h-8 text-secondary/40 group-hover:text-secondary transition-colors" fill="none" viewbox="0 0 80 32">
+<path d="M2 26 L16 22 L30 25 L44 14 L58 18 L72 6 L78 8" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+</div>
+<!-- Total Spend -->
+<div class="bg-surface-container-lowest rounded-xl p-5 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between relative overflow-hidden group">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Committed Outflow</span>
+<div class="w-8 h-8 rounded-lg bg-surface-container-low flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[18px]">payments</span>
+</div>
+</div>
+<div class="mt-4 flex items-baseline justify-between">
+<div>
+<div class="font-display-lg text-display-lg text-on-surface leading-none">$14.28M</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant mt-1.5 flex items-center gap-1.5">
+<span class="text-on-surface-variant">92% budget allocated</span>
+</div>
+</div>
+<svg class="w-20 h-8 text-secondary/40 group-hover:text-secondary transition-colors" fill="none" viewbox="0 0 80 32">
+<path d="M2 28 L18 24 L32 20 L48 16 L62 10 L78 4" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+</div>
+<!-- Pending Review -->
+<div class="bg-surface-container-lowest rounded-xl p-5 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between relative overflow-hidden group">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Pending Sign-off</span>
+<div class="w-8 h-8 rounded-lg bg-secondary-container/40 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[18px]">pending_actions</span>
+</div>
+</div>
+<div class="mt-4 flex items-baseline justify-between">
+<div>
+<div class="font-display-lg text-display-lg text-on-surface leading-none">38</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant mt-1.5 flex items-center gap-1">
+<span class="text-secondary font-medium">Avg cycle: 4.2h</span>
+</div>
+</div>
+<!-- Micro Donut Metric Indicator -->
+<div class="relative w-8 h-8 flex items-center justify-center">
+<svg class="w-8 h-8 -rotate-90" viewbox="0 0 36 36">
+<circle class="stroke-surface-container" cx="18" cy="18" fill="none" r="14" stroke-width="3"></circle>
+<circle class="stroke-secondary" cx="18" cy="18" fill="none" r="14" stroke-dasharray="88" stroke-dashoffset="24" stroke-linecap="round" stroke-width="3"></circle>
+</svg>
+<span class="material-symbols-outlined text-[12px] absolute text-secondary">hourglass_bottom</span>
+</div>
+</div>
+</div>
+<!-- Discrepancies -->
+<div class="bg-surface-container-lowest rounded-xl p-5 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between relative overflow-hidden group">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">AI Discrepancy Flags</span>
+<div class="w-8 h-8 rounded-lg bg-error-container/30 flex items-center justify-center text-error">
+<span class="material-symbols-outlined text-[18px]">gavel</span>
+</div>
+</div>
+<div class="mt-4 flex items-baseline justify-between">
+<div>
+<div class="font-display-lg text-display-lg text-error leading-none">12</div>
+<div class="font-body-sm text-body-sm text-error/90 mt-1.5 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">warning</span>
+<span>$382,400 in variance</span>
+</div>
+</div>
+<div class="px-2 py-1 rounded bg-error-container/50 font-label-sm text-label-sm text-on-error-container font-semibold">
+            Action Req.
+          </div>
+</div>
+</div>
+</div>
+<!-- Filter & Inspection Control Bar -->
+<div class="bg-surface-container-lowest rounded-xl p-3 shadow-sm flex flex-col lg:flex-row items-center justify-between gap-3">
+<!-- Search Input -->
+<div class="relative w-full lg:w-96 flex items-center">
+<span class="material-symbols-outlined absolute left-3 text-outline text-[18px]">search</span>
+<input class="w-full pl-9 pr-8 py-2 bg-surface-container-low rounded-lg font-body-sm text-body-sm text-on-surface placeholder:text-outline focus:outline-none focus:bg-surface-container-lowest shadow-inner transition-all" id="po-search-input" placeholder="Filter by PO #, vendor, cost center, line SKU..." type="text"/>
+<span class="absolute right-2.5 px-1.5 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-sm text-[10px]">⌘K</span>
+</div>
+<!-- Quick Filter Pills -->
+<div class="flex items-center gap-1.5 w-full lg:w-auto overflow-x-auto pb-1 lg:pb-0" id="filter-pills-container">
+<button class="filter-pill active px-3.5 py-1.5 rounded-lg bg-primary-container text-primary-fixed font-label-md text-label-md font-semibold transition-all shadow-sm" data-filter="all">
+          All Orders (1,428)
+        </button>
+<button class="filter-pill px-3.5 py-1.5 rounded-lg bg-surface-container-low text-on-surface-variant hover:bg-surface-container hover:text-on-surface font-label-md text-label-md transition-all" data-filter="review">
+          Needs Review (38)
+        </button>
+<button class="filter-pill px-3.5 py-1.5 rounded-lg bg-surface-container-low text-on-surface-variant hover:bg-surface-container hover:text-on-surface font-label-md text-label-md transition-all flex items-center gap-1.5" data-filter="flagged">
+<span class="w-2 h-2 rounded-full bg-error"></span>
+          Flagged Discrepancies (12)
+        </button>
+<button class="filter-pill px-3.5 py-1.5 rounded-lg bg-surface-container-low text-on-surface-variant hover:bg-surface-container hover:text-on-surface font-label-md text-label-md transition-all" data-filter="approved">
+          3-Way Matched (1,378)
+        </button>
+</div>
+<!-- Quick View Options -->
+<div class="flex items-center gap-2 self-end lg:self-auto">
+<div class="flex items-center bg-surface-container-low rounded-lg p-0.5 text-on-surface-variant">
+<button class="p-1.5 rounded-md bg-surface-container-lowest text-on-surface shadow-xs" title="Compact Table">
+<span class="material-symbols-outlined text-[16px]">view_headline</span>
+</button>
+<button class="p-1.5 rounded-md hover:text-on-surface transition-colors" title="Detailed Grid">
+<span class="material-symbols-outlined text-[16px]">grid_view</span>
+</button>
+</div>
+<button class="p-2 bg-surface-container-low hover:bg-surface-container text-on-surface-variant rounded-lg transition-colors" title="Export CSV Ledger">
+<span class="material-symbols-outlined text-[18px]">download</span>
+</button>
+</div>
+</div>
+<!-- Dual Layout: PO Master Ledger with AI Workspace Preview Side-Panel -->
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-6 items-start">
+<!-- Primary Table Module (8 or 12 Cols depending on selection) -->
+<div class="xl:col-span-8 bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden flex flex-col">
+<!-- Table Subheader Summary -->
+<div class="px-6 py-4 flex items-center justify-between bg-surface-container-lowest">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm text-on-surface">Verified Procurement Records</span>
+<span class="px-2 py-0.5 bg-surface-container-low text-secondary font-label-sm text-label-sm rounded-md">Realtime Sync</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Showing latest 5 orders</span>
+</div>
+<!-- Master Table Component -->
+<div class="overflow-x-auto w-full">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low/60 text-on-surface-variant font-label-sm text-label-sm uppercase tracking-wider">
+<th class="py-3 px-5">Order ID</th>
+<th class="py-3 px-5">Vendor Entity</th>
+<th class="py-3 px-4">Dates (Issue / Due)</th>
+<th class="py-3 px-4 text-right">Committed Value</th>
+<th class="py-3 px-5">Reconciliation Status</th>
+<th class="py-3 px-4 text-center">AI Audit Action</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container-low" id="po-table-body">
+<!-- ROW 1: Flagged Discrepancy (Currently Highlighted) -->
+<tr class="po-row cursor-pointer transition-colors bg-surface-container-low/30 hover:bg-surface-container-low group" data-amount="$418,250.00" data-dept="Capital Machinery / Project Alpha" data-flag="discrepancy" data-poid="PO-2024-8832" data-vendor="Northwind Heavy Equipment AG">
+<td class="py-4 px-5">
+<div class="flex items-center gap-2">
+<span class="px-2.5 py-1 rounded bg-primary-container text-primary-fixed font-tabular-amount text-label-md font-semibold tracking-tight shadow-2xs group-hover:bg-primary transition-colors">
+                      PO-2024-8832
+                    </span>
+<span class="w-1.5 h-1.5 rounded-full bg-error" title="Variance Detected"></span>
+</div>
+</td>
+<td class="py-4 px-5">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold group-hover:text-primary transition-colors">Northwind Heavy Equipment AG</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">CapEx · Berlin, Germany</span>
+</div>
+</td>
+<td class="py-4 px-4">
+<div class="flex flex-col font-body-sm text-body-sm">
+<span class="text-on-surface">Oct 24, 2024</span>
+<span class="text-on-surface-variant">Due Nov 15, 2024</span>
+</div>
+</td>
+<td class="py-4 px-4 text-right">
+<div class="font-tabular-amount text-tabular-amount text-on-surface font-semibold">$418,250.00</div>
+<div class="font-label-sm text-label-sm text-error font-medium">+$24,100 over contract</div>
+</td>
+<td class="py-4 px-5">
+<div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-error-container/60 text-on-error-container font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[14px]">error</span>
+                    Price Mismatch
+                  </div>
+</td>
+<td class="py-4 px-4 text-center">
+<button class="px-3 py-1.5 rounded-lg bg-surface-container hover:bg-primary hover:text-on-primary transition-all text-on-surface font-label-sm text-label-sm flex items-center gap-1.5 mx-auto">
+<span class="material-symbols-outlined text-[15px] text-on-tertiary-container">auto_awesome</span>
+                    Inspect AI
+                  </button>
+</td>
+</tr>
+<!-- ROW 2: 3-Way Matched -->
+<tr class="po-row cursor-pointer transition-colors hover:bg-surface-container-low group" data-amount="$92,400.00" data-dept="Cloud Infrastructure &amp; DevOps" data-flag="approved" data-poid="PO-2024-8841" data-vendor="Aether Dynamics Global LLC">
+<td class="py-4 px-5">
+<div class="flex items-center gap-2">
+<span class="px-2.5 py-1 rounded bg-surface-container text-on-surface font-tabular-amount text-label-md font-semibold tracking-tight group-hover:bg-primary-container group-hover:text-primary-fixed transition-colors">
+                      PO-2024-8841
+                    </span>
+</div>
+</td>
+<td class="py-4 px-5">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold group-hover:text-primary transition-colors">Aether Dynamics Global LLC</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">SaaS Subscription · San Jose, CA</span>
+</div>
+</td>
+<td class="py-4 px-4">
+<div class="flex flex-col font-body-sm text-body-sm">
+<span class="text-on-surface">Oct 26, 2024</span>
+<span class="text-on-surface-variant">Due Dec 01, 2024</span>
+</div>
+</td>
+<td class="py-4 px-4 text-right">
+<div class="font-tabular-amount text-tabular-amount text-on-surface font-semibold">$92,400.00</div>
+<div class="font-label-sm text-label-sm text-emerald-600 font-medium">100% matched</div>
+</td>
+<td class="py-4 px-5">
+<div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-700 font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[14px]">verified</span>
+                    3-Way Verified
+                  </div>
+</td>
+<td class="py-4 px-4 text-center">
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-low hover:bg-primary hover:text-on-primary transition-all text-on-surface font-label-sm text-label-sm flex items-center gap-1.5 mx-auto">
+<span class="material-symbols-outlined text-[15px] text-secondary">open_in_new</span>
+                    View Record
+                  </button>
+</td>
+</tr>
+<!-- ROW 3: Pending Review -->
+<tr class="po-row cursor-pointer transition-colors hover:bg-surface-container-low group" data-amount="$1,820,000.00" data-dept="Supply Chain &amp; Freight" data-flag="review" data-poid="PO-2024-8839" data-vendor="Sovereign Logistical Services Ltd">
+<td class="py-4 px-5">
+<div class="flex items-center gap-2">
+<span class="px-2.5 py-1 rounded bg-surface-container text-on-surface font-tabular-amount text-label-md font-semibold tracking-tight group-hover:bg-primary-container group-hover:text-primary-fixed transition-colors">
+                      PO-2024-8839
+                    </span>
+</div>
+</td>
+<td class="py-4 px-5">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold group-hover:text-primary transition-colors">Sovereign Logistical Services</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Logistics &amp; Customs · Rotterdam, NL</span>
+</div>
+</td>
+<td class="py-4 px-4">
+<div class="flex flex-col font-body-sm text-body-sm">
+<span class="text-on-surface">Oct 25, 2024</span>
+<span class="text-on-surface-variant">Due Nov 30, 2024</span>
+</div>
+</td>
+<td class="py-4 px-4 text-right">
+<div class="font-tabular-amount text-tabular-amount text-on-surface font-semibold">$1,820,000.00</div>
+<div class="font-label-sm text-label-sm text-secondary font-medium">Pending CFO Gate</div>
+</td>
+<td class="py-4 px-5">
+<div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-secondary-container/50 text-on-secondary-container font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[14px]">schedule</span>
+                    Pending Sign-Off
+                  </div>
+</td>
+<td class="py-4 px-4 text-center">
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-low hover:bg-primary hover:text-on-primary transition-all text-on-surface font-label-sm text-label-sm flex items-center gap-1.5 mx-auto">
+<span class="material-symbols-outlined text-[15px] text-on-tertiary-container">auto_awesome</span>
+                    Inspect AI
+                  </button>
+</td>
+</tr>
+<!-- ROW 4: Flagged Tax Surcharge Discrepancy -->
+<tr class="po-row cursor-pointer transition-colors hover:bg-surface-container-low group" data-amount="$64,300.00" data-dept="Advanced Hardware Research" data-flag="discrepancy" data-poid="PO-2024-8820" data-vendor="Helios Precision Photonics">
+<td class="py-4 px-5">
+<div class="flex items-center gap-2">
+<span class="px-2.5 py-1 rounded bg-surface-container text-on-surface font-tabular-amount text-label-md font-semibold tracking-tight group-hover:bg-primary-container group-hover:text-primary-fixed transition-colors">
+                      PO-2024-8820
+                    </span>
+<span class="w-1.5 h-1.5 rounded-full bg-error" title="Tax Code Ambiguity"></span>
+</div>
+</td>
+<td class="py-4 px-5">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold group-hover:text-primary transition-colors">Helios Precision Photonics</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">R&amp;D Hardware · Zurich, Switzerland</span>
+</div>
+</td>
+<td class="py-4 px-4">
+<div class="flex flex-col font-body-sm text-body-sm">
+<span class="text-on-surface">Oct 21, 2024</span>
+<span class="text-on-surface-variant">Due Nov 10, 2024</span>
+</div>
+</td>
+<td class="py-4 px-4 text-right">
+<div class="font-tabular-amount text-tabular-amount text-on-surface font-semibold">$64,300.00</div>
+<div class="font-label-sm text-label-sm text-error font-medium">VAT Surcharge Alert</div>
+</td>
+<td class="py-4 px-5">
+<div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-error-container/60 text-on-error-container font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[14px]">percent</span>
+                    Tax Variance
+                  </div>
+</td>
+<td class="py-4 px-4 text-center">
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-low hover:bg-primary hover:text-on-primary transition-all text-on-surface font-label-sm text-label-sm flex items-center gap-1.5 mx-auto">
+<span class="material-symbols-outlined text-[15px] text-on-tertiary-container">auto_awesome</span>
+                    Inspect AI
+                  </button>
+</td>
+</tr>
+<!-- ROW 5: 3-Way Matched Standard -->
+<tr class="po-row cursor-pointer transition-colors hover:bg-surface-container-low group" data-amount="$289,120.00" data-dept="Outbound Logistics" data-flag="approved" data-poid="PO-2024-8790" data-vendor="Consolidated Freightway Systems">
+<td class="py-4 px-5">
+<div class="flex items-center gap-2">
+<span class="px-2.5 py-1 rounded bg-surface-container text-on-surface font-tabular-amount text-label-md font-semibold tracking-tight group-hover:bg-primary-container group-hover:text-primary-fixed transition-colors">
+                      PO-2024-8790
+                    </span>
+</div>
+</td>
+<td class="py-4 px-5">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold group-hover:text-primary transition-colors">Consolidated Freightway Systems</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Ground Fleet · Chicago, IL</span>
+</div>
+</td>
+<td class="py-4 px-4">
+<div class="flex flex-col font-body-sm text-body-sm">
+<span class="text-on-surface">Oct 19, 2024</span>
+<span class="text-on-surface-variant">Due Nov 08, 2024</span>
+</div>
+</td>
+<td class="py-4 px-4 text-right">
+<div class="font-tabular-amount text-tabular-amount text-on-surface font-semibold">$289,120.00</div>
+<div class="font-label-sm text-label-sm text-emerald-600 font-medium">100% matched</div>
+</td>
+<td class="py-4 px-5">
+<div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-700 font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[14px]">verified</span>
+                    3-Way Verified
+                  </div>
+</td>
+<td class="py-4 px-4 text-center">
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-low hover:bg-primary hover:text-on-primary transition-all text-on-surface font-label-sm text-label-sm flex items-center gap-1.5 mx-auto">
+<span class="material-symbols-outlined text-[15px] text-secondary">open_in_new</span>
+                    View Record
+                  </button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Pagination Footer -->
+<div class="px-6 py-3.5 bg-surface-container-low/40 flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
+<div>Displaying 5 of 1,428 orders</div>
+<div class="flex items-center gap-2">
+<button class="px-2.5 py-1 rounded bg-surface-container-lowest shadow-xs hover:bg-surface-container transition-colors disabled:opacity-50" disabled="">Previous</button>
+<span class="px-2 font-medium text-on-surface">Page 1 of 286</span>
+<button class="px-2.5 py-1 rounded bg-surface-container-lowest shadow-xs hover:bg-surface-container transition-colors">Next</button>
+</div>
+</div>
+</div>
+<!-- Quick Row Inspection & AI Query Preview Workspace (Executive Side Drawer) -->
+<div class="xl:col-span-4 flex flex-col gap-4">
+<!-- Selected Order Overview Card -->
+<div class="bg-surface-container-lowest rounded-xl p-5 shadow-sm flex flex-col gap-4">
+<div class="flex items-start justify-between">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary">Selected Audit Target</span>
+<div class="font-headline-md text-headline-md text-on-surface font-bold tracking-tight mt-0.5" id="detail-po-id">PO-2024-8832</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant" id="detail-dept">Capital Machinery / Project Alpha</div>
+</div>
+<div class="px-3 py-1 rounded-full bg-error-container/60 text-on-error-container font-label-sm text-label-sm font-semibold flex items-center gap-1" id="detail-badge">
+<span class="material-symbols-outlined text-[14px]">warning</span>
+              Audit Flagged
+            </div>
+</div>
+<!-- Structured Key-Value Ledger Grid -->
+<div class="grid grid-cols-2 gap-2 p-3 bg-surface-container-low rounded-lg text-on-surface">
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant block uppercase">Vendor Partner</span>
+<span class="font-label-md text-label-md font-semibold truncate block" id="detail-vendor">Northwind Heavy AG</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant block uppercase">Total Invoiced</span>
+<span class="font-tabular-amount text-label-md font-bold text-on-surface block" id="detail-amount">$418,250.00</span>
+</div>
+<div class="mt-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant block uppercase">Contract Baseline</span>
+<span class="font-tabular-amount text-label-md font-medium text-on-surface block">$394,150.00</span>
+</div>
+<div class="mt-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant block uppercase">Calculated Delta</span>
+<span class="font-tabular-amount text-label-md font-bold text-error block" id="detail-variance">+$24,100.00 (6.1%)</span>
+</div>
+</div>
+<!-- Three-Way Match Verification Diagnostic -->
+<div class="flex flex-col gap-2">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">Continuous Audit Matrix</span>
+<div class="flex items-center justify-between p-2.5 rounded-lg bg-surface-container-low/50">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-[18px] text-emerald-600">check_circle</span>
+<span class="font-body-sm text-body-sm text-on-surface">Purchase Requisition (#PR-9921)</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary font-medium">Valid</span>
+</div>
+<div class="flex items-center justify-between p-2.5 rounded-lg bg-surface-container-low/50">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-[18px] text-emerald-600">check_circle</span>
+<span class="font-body-sm text-body-sm text-on-surface">Warehouse Receipt (#GRN-4412)</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary font-medium">12/12 Units</span>
+</div>
+<div class="flex items-center justify-between p-2.5 rounded-lg bg-error-container/20">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-[18px] text-error">cancel</span>
+<span class="font-body-sm text-body-sm text-error font-medium">Vendor Invoice (#INV-8832-B)</span>
+</div>
+<span class="font-label-sm text-label-sm text-error font-bold">+6.1% Line Spike</span>
+</div>
+</div>
+<!-- AI Audit Query Agent Conversational Assistant -->
+<div class="flex flex-col gap-3 p-4 rounded-xl bg-surface-container-low border-0 shadow-xs">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-md bg-tertiary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[14px] text-on-tertiary-container">psychology</span>
+</div>
+<span class="font-label-md text-label-md font-semibold text-on-surface">ProcureIQ Auditor Agent</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary">Claude 3.5 Sonnet</span>
+</div>
+<div class="p-3 bg-surface-container-lowest rounded-lg font-body-sm text-body-sm text-on-surface leading-relaxed shadow-2xs">
+<p><strong>Discrepancy Synthesis:</strong> Unit cost for line item #04 <em>(Hydraulic Actuator Model-V)</em> was billed at <strong>$8,750</strong>/unit vs contract master rate of <strong>$6,200</strong>. No amended change-order exists on file.</p>
+</div>
+<!-- Instant Query Prompts -->
+<div class="flex flex-wrap gap-1.5">
+<button class="ai-query-btn px-2.5 py-1 rounded-md bg-surface-container-lowest hover:bg-secondary-container/40 text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm transition-colors text-left">
+                ⚡ Draft Vendor Rejection Notice
+              </button>
+<button class="ai-query-btn px-2.5 py-1 rounded-md bg-surface-container-lowest hover:bg-secondary-container/40 text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm transition-colors text-left">
+                🔍 Check Historical Master Agreements
+              </button>
+</div>
+<!-- Agent Interaction Input -->
+<div class="relative mt-1">
+<input class="w-full pl-3 pr-9 py-2 bg-surface-container-lowest rounded-lg font-body-sm text-body-sm text-on-surface placeholder:text-outline focus:outline-none focus:ring-1 focus:ring-primary transition-all" placeholder="Ask agent: e.g. Why did tax calculation jump?..." type="text"/>
+<button class="absolute right-2 top-2 text-secondary hover:text-on-surface transition-colors" title="Send Audit Prompt">
+<span class="material-symbols-outlined text-[18px]">send</span>
+</button>
+</div>
+</div>
+<!-- Execution Governance Action Buttons -->
+<div class="flex items-center gap-3 pt-2">
+<button class="flex-1 py-2.5 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface font-label-md text-label-md font-semibold transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[18px]">mail</span>
+              Inquire Vendor
+            </button>
+<button class="flex-1 py-2.5 rounded-lg bg-primary hover:bg-primary-container text-on-primary font-label-md text-label-md font-semibold transition-colors shadow-sm flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[18px]">check</span>
+              Approve Overwrite
+            </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  // High density row selection and interactive inspection preview
+  document.addEventListener('DOMContentLoaded', () => {
+    const rows = document.querySelectorAll('.po-row');
+    const detailPoId = document.getElementById('detail-po-id');
+    const detailVendor = document.getElementById('detail-vendor');
+    const detailAmount = document.getElementById('detail-amount');
+    const detailDept = document.getElementById('detail-dept');
+    const detailBadge = document.getElementById('detail-badge');
+    const detailVariance = document.getElementById('detail-variance');
+
+    rows.forEach(row => {
+      row.addEventListener('click', () => {
+        // Clear all active background styles
+        rows.forEach(r => r.classList.remove('bg-surface-container-low/40'));
+        row.classList.add('bg-surface-container-low/40');
+
+        const poid = row.getAttribute('data-poid');
+        const vendor = row.getAttribute('data-vendor');
+        const amount = row.getAttribute('data-amount');
+        const dept = row.getAttribute('data-dept');
+        const flag = row.getAttribute('data-flag');
+
+        detailPoId.textContent = poid;
+        detailVendor.textContent = vendor;
+        detailAmount.textContent = amount;
+        detailDept.textContent = dept;
+
+        if (flag === 'discrepancy') {
+          detailBadge.className = 'px-3 py-1 rounded-full bg-error-container/60 text-on-error-container font-label-sm text-label-sm font-semibold flex items-center gap-1';
+          detailBadge.innerHTML = '<span class="material-symbols-outlined text-[14px]">warning</span> Discrepancy Flag';
+          detailVariance.textContent = '+$24,100.00 (Variance)';
+          detailVariance.className = 'font-tabular-amount text-label-md font-bold text-error block';
+        } else if (flag === 'approved') {
+          detailBadge.className = 'px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 font-label-sm text-label-sm font-semibold flex items-center gap-1';
+          detailBadge.innerHTML = '<span class="material-symbols-outlined text-[14px]">verified</span> 3-Way Matched';
+          detailVariance.textContent = '$0.00 Variance (100%)';
+          detailVariance.className = 'font-tabular-amount text-label-md font-bold text-emerald-700 block';
+        } else {
+          detailBadge.className = 'px-3 py-1 rounded-full bg-secondary-container/50 text-on-secondary-container font-label-sm text-label-sm font-semibold flex items-center gap-1';
+          detailBadge.innerHTML = '<span class="material-symbols-outlined text-[14px]">schedule</span> Pending Gate';
+          detailVariance.textContent = 'Within Tolerance';
+          detailVariance.className = 'font-tabular-amount text-label-md font-bold text-secondary block';
+        }
+      });
+    });
+
+    // Filter pill toggles
+    const pills = document.querySelectorAll('.filter-pill');
+    pills.forEach(pill => {
+      pill.addEventListener('click', () => {
+        pills.forEach(p => {
+          p.classList.remove('bg-primary-container', 'text-primary-fixed', 'font-semibold', 'shadow-sm');
+          p.classList.add('bg-surface-container-low', 'text-on-surface-variant');
+        });
+        pill.classList.remove('bg-surface-container-low', 'text-on-surface-variant');
+        pill.classList.add('bg-primary-container', 'text-primary-fixed', 'font-semibold', 'shadow-sm');
+
+        const filterType = pill.getAttribute('data-filter');
+        rows.forEach(row => {
+          const rowFlag = row.getAttribute('data-flag');
+          if (filterType === 'all') {
+            row.style.display = '';
+          } else if (filterType === 'review' && rowFlag === 'review') {
+            row.style.display = '';
+          } else if (filterType === 'flagged' && rowFlag === 'discrepancy') {
+            row.style.display = '';
+          } else if (filterType === 'approved' && rowFlag === 'approved') {
+            row.style.display = '';
+          } else {
+            row.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    // Real-time text search filter
+    const searchInput = document.getElementById('po-search-input');
+    searchInput.addEventListener('input', (e) => {
+      const query = e.target.value.toLowerCase();
+      rows.forEach(row => {
+        const text = row.innerText.toLowerCase();
+        row.style.display = text.includes(query) ? '' : 'none';
+      });
+    });
+  });
+</script></main><footer class="w-full bg-surface-container-lowest shadow-[0_-1px_8px_rgba(0,0,0,0.02)] py-space-lg"><div class="w-full px-8 flex flex-col sm:flex-row items-center justify-between gap-space-sm text-on-surface-variant font-label-sm text-label-sm"><div>© 2025 ProcureIQ Governance Engine. Automated Algorithmic Continuous Audit.</div><div class="flex items-center gap-space-lg"><span class="flex items-center gap-space-xs"><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>Audit Model v4.2.1 Operational</span><span>SOC-2 Type II Certified</span></div></div></footer></body></html>

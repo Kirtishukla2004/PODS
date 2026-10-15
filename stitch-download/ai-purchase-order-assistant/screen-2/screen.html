@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "surface-dim": "#cbdbf5", "outline": "#75777d", "secondary-fixed-dim": "#abcae8", "surface-container-highest": "#d3e4fe", "inverse-on-surface": "#eaf1ff", "on-surface": "#0b1c30", "tertiary": "#000000", "on-background": "#0b1c30", "inverse-surface": "#213145", "secondary-container": "#c1e0ff", "outline-variant": "#c5c6cd", "on-tertiary-container": "#7771ff", "background": "#f8f9ff", "surface-container-low": "#eff4ff", "on-tertiary-fixed": "#100069", "on-primary-container": "#77849c", "surface-container": "#e5eeff", "on-primary": "#ffffff", "on-secondary-fixed": "#001d31", "on-primary-fixed-variant": "#3a475c", "error": "#ba1a1a", "secondary-fixed": "#cce5ff", "error-container": "#ffdad6", "surface": "#f8f9ff", "surface-variant": "#d3e4fe", "primary-fixed-dim": "#bac7e1", "on-primary-fixed": "#0e1c2f", "surface-container-high": "#dce9ff", "tertiary-container": "#100069", "on-secondary-fixed-variant": "#2b4963", "inverse-primary": "#bac7e1", "on-surface-variant": "#44474c", "tertiary-fixed-dim": "#c3c0ff", "secondary": "#43617c", "on-secondary-container": "#46647e", "tertiary-fixed": "#e3dfff", "on-error": "#ffffff", "surface-container-lowest": "#ffffff", "on-error-container": "#93000a", "surface-bright": "#f8f9ff", "on-tertiary": "#ffffff", "on-secondary": "#ffffff", "primary-fixed": "#d6e3fe", "primary-container": "#0e1c2f", "on-tertiary-fixed-variant": "#372abf", "surface-tint": "#525f75", "primary": "#000000" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "space-lg": "1rem", "space-xl": "1.5rem", "space-xs": "0.25rem", "space-md": "0.75rem", "space-sm": "0.5rem", "gutter": "0.75rem", "margin": "1rem" }, "fontFamily": { "headline-sm": ["Plus Jakarta Sans"], "headline-md": ["Plus Jakarta Sans"], "tabular-amount": ["Inter"], "headline-lg": ["Plus Jakarta Sans"], "body-lg": ["Inter"], "body-sm": ["Inter"], "label-sm": ["Inter"], "display-lg": ["Plus Jakarta Sans"], "label-md": ["Inter"], "body-md": ["Inter"] }, "fontSize": { "headline-sm": ["16px", { "lineHeight": "24px", "letterSpacing": "-0.005em", "fontWeight": "600" }], "headline-md": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "tabular-amount": ["15px", { "lineHeight": "20px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "headline-lg": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "600" }], "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }], "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "600" }], "display-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "label-md": ["13px", { "lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "500" }], "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }] } } } }</script><style>@layer base{html,body{min-height:100%;margin:0;padding:0;}body{overscroll-behavior-y:none;-webkit-tap-highlight-color:transparent;}.pb-safe{padding-bottom:calc(env(safe-area-inset-bottom,0px) + 0.5rem);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-on-surface antialiased flex flex-col min-h-screen selection:bg-secondary-container selection:text-on-secondary-container"><header class="fixed top-0 inset-x-0 z-50 bg-surface-container-lowest/80 backdrop-blur-xl pt-safe shadow-[0_1px_8px_rgba(11,28,48,0.04)]"><div class="h-16 px-margin flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm min-w-0"><img alt="ProcureIQ Logo" class="h-8 w-auto object-contain shrink-0" src="https://lh3.googleusercontent.com/aida/AEtjO1UrKQLrOp9ONcPH7Y-5c-qnM-a_EBniCq3dkX2lpub_gCLfNZQ42VFd_uyRiEhr_2yYKOsg4E4LF-nA-1zYvt8JRY9YF4IL0QCBj4OKMrBD26Oit7V1LpVYCglSYZ0m5FpIpXS8r4Ua9sSzHnQG_rGHxi9iAov3kMOyke72yxueS0VYNd0sHWpisldL62QmwkSVWePB24O-49WEoRs_ZdPRmxDX1Rx-udLwevdf6IKBnFkgeUssQNTb"/><div class="flex flex-col min-w-0"><div class="flex items-center gap-space-xs"><span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant leading-none">ProcureIQ</span><span class="h-1.5 w-1.5 rounded-full bg-secondary shrink-0"></span></div><h1 class="font-headline-sm text-headline-sm text-on-surface truncate leading-tight">Orders</h1></div></div><div class="flex items-center gap-space-xs shrink-0"><button aria-label="Notifications" class="relative w-11 h-11 flex items-center justify-center rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-2.5 right-2.5 w-2 h-2 rounded-full bg-error ring-2 ring-surface-container-lowest"></span></button><button aria-label="Executive Profile" class="w-11 h-11 flex items-center justify-center rounded-lg p-0.5 hover:bg-surface-container transition-colors" type="button"><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-1 ring-outline-variant/50" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDA6o8FPaDq4YDeiVcoFXP3V9ty6tXWO-0QlEVVC0YU_-QvvDoWtu9WeZQYTUW8f2-Z-xDuQt2KWtgofaIuaQZ4omxU70Y-qQ9T2BRctP3gpgp83Yz6PGpvA8F-r5tnD9AP1zaM0lD9FhJMpJh5f4xKkBOgml_9Rcyz0vPICWMiptC9-jinpfS0qxnElNSHoCK0rmVyhWVZnHYui_dI6MKJRoQAqQ_k3bB9SnN7MoycCER6dthiDJy8"/></button></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 pb-24 bg-surface min-h-screen"><div class="flex flex-col w-full pb-6">
+<!-- Search & Executive Filter Bar -->
+<div class="px-margin pt-space-sm space-y-space-sm">
+<div class="relative flex items-center w-full">
+<span class="material-symbols-outlined absolute left-3.5 text-on-surface-variant text-[20px] pointer-events-none">search</span>
+<input class="w-full h-11 pl-10 pr-11 bg-surface-container-lowest text-on-surface font-body-md text-body-md rounded-xl placeholder:text-outline shadow-sm focus:outline-none focus:bg-surface-container-lowest" placeholder="Search PO#, vendor, SKU, or ledger code..." type="text"/>
+<button aria-label="Filters" class="absolute right-1.5 w-8 h-8 flex items-center justify-center rounded-lg bg-surface-container-low text-on-surface-variant hover:text-on-surface transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">tune</span>
+</button>
+</div>
+<!-- Sticky Rapid Triage Filter Row -->
+<div class="flex items-center gap-space-xs overflow-x-auto no-scrollbar py-0.5">
+<button class="shrink-0 flex items-center gap-1.5 h-7 px-3 rounded-full bg-on-surface text-on-primary font-label-sm text-label-sm shadow-sm transition-transform active:scale-95">
+<span class="w-1.5 h-1.5 rounded-full bg-error animate-pulse"></span>
+        Requires Action (3)
+      </button>
+<button class="shrink-0 flex items-center gap-1 h-7 px-3 rounded-full bg-surface-container-lowest text-on-surface-variant font-label-sm text-label-sm shadow-sm hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined text-[14px]">payments</span>
+        High Value (&gt; $100k)
+      </button>
+<button class="shrink-0 flex items-center gap-1 h-7 px-3 rounded-full bg-surface-container-lowest text-on-surface-variant font-label-sm text-label-sm shadow-sm hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined text-[14px]">account_balance_wallet</span>
+        Q3 Budget
+      </button>
+<button class="shrink-0 flex items-center gap-1 h-7 px-3 rounded-full bg-surface-container-lowest text-on-surface-variant font-label-sm text-label-sm shadow-sm hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined text-[14px]">verified</span>
+        Auto-Matched
+      </button>
+</div>
+</div>
+<!-- KPI Pulse Carousel / Grid -->
+<div class="px-margin mt-space-md">
+<div class="grid grid-cols-2 gap-space-xs">
+<!-- Total PO Value -->
+<div class="p-space-sm rounded-xl bg-surface-container-lowest shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Total PO Pipeline</span>
+<div class="w-6 h-6 rounded-lg bg-surface-container flex items-center justify-center text-on-surface">
+<span class="material-symbols-outlined text-[16px]">account_balance</span>
+</div>
+</div>
+<div class="mt-2">
+<span class="font-headline-md text-headline-md text-on-surface font-tabular-amount tracking-tight">$4.82M</span>
+<div class="flex items-center gap-1 mt-0.5 text-secondary">
+<span class="material-symbols-outlined text-[14px]">trending_up</span>
+<span class="font-body-sm text-body-sm font-medium">+14.2% MoM</span>
+</div>
+</div>
+</div>
+<!-- Pending Verification -->
+<div class="p-space-sm rounded-xl bg-surface-container-lowest shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Pending Audit</span>
+<div class="w-6 h-6 rounded-lg bg-surface-container-highest flex items-center justify-center text-on-surface">
+<span class="material-symbols-outlined text-[16px]">pending_actions</span>
+</div>
+</div>
+<div class="mt-2">
+<div class="flex items-baseline gap-1.5">
+<span class="font-headline-md text-headline-md text-on-surface font-tabular-amount tracking-tight">14</span>
+<span class="font-label-sm text-label-sm text-outline">PO drafts</span>
+</div>
+<div class="flex items-center gap-1 mt-0.5 text-on-surface-variant">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary-fixed-dim"></span>
+<span class="font-body-sm text-body-sm">Avg turn: 3.4 hrs</span>
+</div>
+</div>
+</div>
+<!-- SLA Breaches / Alerts -->
+<div class="p-space-sm rounded-xl bg-surface-container-lowest shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">SLA Risk</span>
+<div class="w-6 h-6 rounded-lg bg-error-container flex items-center justify-center text-error">
+<span class="material-symbols-outlined text-[16px]">fmd_bad</span>
+</div>
+</div>
+<div class="mt-2">
+<div class="flex items-baseline gap-1.5">
+<span class="font-headline-md text-headline-md text-error font-tabular-amount tracking-tight">2</span>
+<span class="font-label-sm text-label-sm text-error">SLA alerts</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant block mt-0.5">Expiring in &lt; 2h</span>
+</div>
+</div>
+<!-- Autonomous Match Rate -->
+<div class="p-space-sm rounded-xl bg-surface-container-lowest shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Match Accuracy</span>
+<div class="w-6 h-6 rounded-lg bg-surface-container-high flex items-center justify-center text-on-surface">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+</div>
+</div>
+<div class="mt-2">
+<span class="font-headline-md text-headline-md text-on-surface font-tabular-amount tracking-tight">99.4%</span>
+<div class="flex items-center gap-1.5 mt-1">
+<div class="w-full bg-surface-container-high h-1.5 rounded-full overflow-hidden">
+<div class="bg-secondary h-full rounded-full" style="width: 99.4%"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Status Category Filter Bar -->
+<div class="px-margin mt-space-md">
+<div class="flex items-center gap-2 overflow-x-auto no-scrollbar pb-1">
+<button class="shrink-0 px-3 py-1.5 rounded-lg bg-primary-container text-on-primary font-label-md text-label-md shadow-sm">All (42)</button>
+<button class="shrink-0 px-3 py-1.5 rounded-lg bg-surface-container-lowest text-on-surface-variant hover:text-on-surface font-label-md text-label-md shadow-sm">Pending (14)</button>
+<button class="shrink-0 px-3 py-1.5 rounded-lg bg-surface-container-lowest text-on-surface-variant hover:text-on-surface font-label-md text-label-md shadow-sm">Matched (24)</button>
+<button class="shrink-0 px-3 py-1.5 rounded-lg bg-surface-container-lowest text-on-surface-variant hover:text-on-surface font-label-md text-label-md shadow-sm">Discrepancies (3)</button>
+<button class="shrink-0 px-3 py-1.5 rounded-lg bg-surface-container-lowest text-on-surface-variant hover:text-on-surface font-label-md text-label-md shadow-sm">Fulfilled (1)</button>
+</div>
+</div>
+<!-- Purchase Orders Detailed Feed -->
+<div class="px-margin mt-space-sm space-y-space-sm">
+<!-- Card 1: AWS -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-shadow relative">
+<div class="flex items-start justify-between gap-2">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-semibold">PO-2024-8841</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Today, 09:24 AM</span>
+</div>
+<!-- Status Badge -->
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-surface-container-highest text-on-surface font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+          Pending Review
+        </span>
+</div>
+<div class="mt-2.5">
+<h2 class="font-headline-sm text-headline-sm text-on-surface tracking-tight">Global Cloud Infrastructure Q3</h2>
+<div class="flex items-center gap-2 mt-1">
+<div class="flex items-center gap-1 text-on-surface-variant">
+<span class="font-label-md text-label-md text-on-surface">Amazon Web Services</span>
+<span class="material-symbols-outlined text-[15px] text-secondary" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+<span class="text-outline-variant">•</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">CC-409 CloudOps</span>
+</div>
+</div>
+<!-- Financial Value & Match Gauge -->
+<div class="mt-3.5 p-space-sm rounded-lg bg-surface-container-low flex items-center justify-between">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline block">Total Committed</span>
+<span class="font-headline-md text-headline-md text-on-surface font-tabular-amount">$148,250.00</span>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline block">3-Way Match</span>
+<div class="flex items-center gap-1.5 mt-0.5">
+<span class="font-label-md text-label-md font-semibold text-on-surface">98%</span>
+<span class="material-symbols-outlined text-[18px] text-secondary">check_circle</span>
+</div>
+</div>
+</div>
+<!-- Bottom Interactive AI & Quick Approval Bar -->
+<div class="mt-3 pt-space-xs flex items-center justify-between gap-2">
+<button class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container-high text-on-surface font-label-md text-label-md hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-[16px] text-secondary">auto_awesome</span>
+          Ask AI about this PO
+        </button>
+<div class="flex items-center gap-1">
+<button class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-on-surface hover:bg-surface-container-highest transition-colors" title="Audit Log">
+<span class="material-symbols-outlined text-[18px]">receipt_long</span>
+</button>
+<button class="px-3 h-8 rounded-lg bg-primary text-on-primary font-label-md text-label-md font-semibold shadow-sm hover:opacity-90 transition-opacity">
+            Sign Off
+          </button>
+</div>
+</div>
+</div>
+<!-- Card 2: Steelcase Workspaces -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-shadow relative">
+<div class="flex items-start justify-between gap-2">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-semibold">PO-2024-8839</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Yesterday, 4:18 PM</span>
+</div>
+<!-- AI Verified Status Badge -->
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[13px]">bolt</span>
+          AI Verified
+        </span>
+</div>
+<div class="mt-2.5">
+<h2 class="font-headline-sm text-headline-sm text-on-surface tracking-tight">Ergonomic Executive Office Fixtures</h2>
+<div class="flex items-center gap-2 mt-1">
+<div class="flex items-center gap-1 text-on-surface-variant">
+<span class="font-label-md text-label-md text-on-surface">Steelcase Workspaces</span>
+<span class="material-symbols-outlined text-[15px] text-secondary" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+<span class="text-outline-variant">•</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">CC-102 Workplace</span>
+</div>
+</div>
+<!-- Financial Value & Match Gauge -->
+<div class="mt-3.5 p-space-sm rounded-lg bg-surface-container-low flex items-center justify-between">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline block">Total Committed</span>
+<span class="font-headline-md text-headline-md text-on-surface font-tabular-amount">$42,600.00</span>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline block">3-Way Match</span>
+<div class="flex items-center gap-1.5 mt-0.5">
+<span class="font-label-md text-label-md font-semibold text-on-surface">100% Fully Reconciled</span>
+<span class="material-symbols-outlined text-[18px] text-secondary" style="font-variation-settings: 'FILL' 1;">task_alt</span>
+</div>
+</div>
+</div>
+<!-- AI Prompt & Details -->
+<div class="mt-3 pt-space-xs flex items-center justify-between gap-2">
+<button class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container-high text-on-surface font-label-md text-label-md hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-[16px] text-secondary">auto_awesome</span>
+          Ask AI about this PO
+        </button>
+<button class="px-3 h-8 rounded-lg bg-surface-container-high text-on-surface font-label-md text-label-md font-semibold hover:bg-surface-container transition-colors">
+          View Receipt
+        </button>
+</div>
+</div>
+<!-- Card 3: Thermo Fisher Scientific (Discrepancy) -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-shadow relative">
+<div class="flex items-start justify-between gap-2">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-error font-semibold">PO-2024-8832</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Oct 12, 11:05 AM</span>
+</div>
+<!-- Discrepancy Badge -->
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-error-container text-error font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[13px]">error</span>
+          Discrepancy Detected
+        </span>
+</div>
+<div class="mt-2.5">
+<h2 class="font-headline-sm text-headline-sm text-on-surface tracking-tight">Specialized Lab Precision Instrumentation</h2>
+<div class="flex items-center gap-2 mt-1">
+<div class="flex items-center gap-1 text-on-surface-variant">
+<span class="font-label-md text-label-md text-on-surface">Thermo Fisher Scientific</span>
+<span class="material-symbols-outlined text-[15px] text-secondary" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+<span class="text-outline-variant">•</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">CC-882 R&amp;D Bio</span>
+</div>
+</div>
+<!-- Variance Flag Callout -->
+<div class="mt-3 p-2.5 rounded-lg bg-error-container/40 flex items-center justify-between text-on-surface">
+<div class="flex items-center gap-2 min-w-0">
+<span class="material-symbols-outlined text-error text-[18px] shrink-0">warning</span>
+<p class="font-body-sm text-body-sm truncate text-on-surface font-medium">State Sales Tax Variance ($1,840.00 unmapped delta)</p>
+</div>
+<span class="font-label-sm text-label-sm text-error font-semibold underline shrink-0 cursor-pointer">Inspect</span>
+</div>
+<!-- Financial Value & Match Gauge -->
+<div class="mt-3 p-space-sm rounded-lg bg-surface-container-low flex items-center justify-between">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline block">Total Committed</span>
+<span class="font-headline-md text-headline-md text-on-surface font-tabular-amount">$310,400.00</span>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-error block">Variance Alert</span>
+<div class="flex items-center gap-1 mt-0.5">
+<span class="font-label-md text-label-md font-semibold text-error">91.2% Match</span>
+<span class="material-symbols-outlined text-[18px] text-error">priority_high</span>
+</div>
+</div>
+</div>
+<!-- Bottom Interactive AI & Variance Action -->
+<div class="mt-3 pt-space-xs flex items-center justify-between gap-2">
+<button class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container-high text-on-surface font-label-md text-label-md hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-[16px] text-secondary">auto_awesome</span>
+          Ask AI about variance
+        </button>
+<button class="px-3 h-8 rounded-lg bg-error text-on-error font-label-md text-label-md font-semibold shadow-sm hover:opacity-90 transition-opacity">
+          Resolve Flag
+        </button>
+</div>
+</div>
+<!-- Card 4: CrowdStrike Inc. -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-shadow relative">
+<div class="flex items-start justify-between gap-2">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-semibold">PO-2024-8820</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Oct 11, 02:40 PM</span>
+</div>
+<!-- Approved Status Badge -->
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[13px]">draw</span>
+          Approved &amp; Signed
+        </span>
+</div>
+<div class="mt-2.5">
+<h2 class="font-headline-sm text-headline-sm text-on-surface tracking-tight">Cybersecurity Threat Detection License</h2>
+<div class="flex items-center gap-2 mt-1">
+<div class="flex items-center gap-1 text-on-surface-variant">
+<span class="font-label-md text-label-md text-on-surface">CrowdStrike Inc.</span>
+<span class="material-symbols-outlined text-[15px] text-secondary" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+<span class="text-outline-variant">•</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">CC-550 SecOps</span>
+</div>
+</div>
+<!-- Financial Value & Match Gauge -->
+<div class="mt-3.5 p-space-sm rounded-lg bg-surface-container-low flex items-center justify-between">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline block">Total Committed</span>
+<span class="font-headline-md text-headline-md text-on-surface font-tabular-amount">$88,000.00</span>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline block">Sign-off Authority</span>
+<div class="flex items-center gap-1 mt-0.5">
+<span class="font-label-md text-label-md font-semibold text-on-surface">CFO Key Validated</span>
+<span class="material-symbols-outlined text-[18px] text-secondary">verified_user</span>
+</div>
+</div>
+</div>
+<!-- Actions -->
+<div class="mt-3 pt-space-xs flex items-center justify-between gap-2">
+<button class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container-high text-on-surface font-label-md text-label-md hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-[16px] text-secondary">auto_awesome</span>
+          Ask AI about this PO
+        </button>
+<button class="px-3 h-8 rounded-lg bg-surface-container-high text-on-surface font-label-md text-label-md font-semibold hover:bg-surface-container transition-colors">
+          Download PDF
+        </button>
+</div>
+</div>
+</div>
+<!-- Ambient AI Floating Action Bar -->
+<div class="fixed bottom-20 inset-x-margin z-40">
+<div class="p-2.5 rounded-xl bg-primary-container text-on-primary shadow-xl backdrop-blur-md flex items-center justify-between gap-3">
+<div class="flex items-center gap-2.5 min-w-0">
+<div class="w-8 h-8 rounded-lg bg-surface-container-lowest/15 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px] text-inverse-on-surface">psychology</span>
+</div>
+<div class="min-w-0">
+<p class="font-label-md text-label-md font-semibold text-on-primary truncate">ProcureIQ Auditor Active</p>
+<p class="font-body-sm text-body-sm text-on-primary-container truncate">Ready to summarize active batch or highlight risks</p>
+</div>
+</div>
+<button class="px-3 py-1.5 rounded-lg bg-on-primary text-primary font-label-md text-label-md font-semibold shrink-0 shadow-sm transition-transform active:scale-95">
+        Run Batch Scan
+      </button>
+</div>
+</div>
+</div>
+<script>
+  // Simple micro-interaction for rapid triage filter chips
+  document.querySelectorAll('.no-scrollbar button').forEach(button => {
+    button.addEventListener('click', function() {
+      // Toggle slight active feedback
+      this.classList.toggle('scale-95');
+      setTimeout(() => this.classList.remove('scale-95'), 150);
+    });
+  });
+</script></main><nav class="fixed bottom-0 inset-x-0 z-50 pb-safe bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_-1px_12px_rgba(11,28,48,0.05)]" data-active-classes="text-on-surface font-semibold"><div class="grid grid-cols-4 items-center h-16 px-space-xs"><a aria-current="page" class="flex flex-col items-center justify-center gap-1 h-full min-h-[44px] transition-colors text-on-surface font-semibold" data-path="orders" href="#"><span class="material-symbols-outlined text-[24px]">description</span><span class="font-label-sm text-label-sm leading-none">Orders</span></a><a class="flex flex-col items-center justify-center gap-1 h-full min-h-[44px] text-on-surface-variant hover:text-on-surface transition-colors" data-path="po-detail" href="#"><span class="material-symbols-outlined text-[24px]">assignment</span><span class="font-label-sm text-label-sm leading-none">PO Detail</span></a><a class="flex flex-col items-center justify-center gap-1 h-full min-h-[44px] text-on-surface-variant hover:text-on-surface transition-colors" data-path="ai-query" href="#"><div class="relative flex items-center justify-center"><span class="material-symbols-outlined text-[24px]">auto_awesome</span><span class="absolute -top-1 -right-1 w-1.5 h-1.5 rounded-full bg-secondary-container"></span></div><span class="font-label-sm text-label-sm leading-none">AI Query</span></a><a class="flex flex-col items-center justify-center gap-1 h-full min-h-[44px] text-on-surface-variant hover:text-on-surface transition-colors" data-path="audit-and-compliance" href="#"><span class="material-symbols-outlined text-[24px]">verified_user</span><span class="font-label-sm text-label-sm leading-none">Audit</span></a></div></nav></body></html>
